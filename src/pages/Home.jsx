@@ -1,8 +1,10 @@
+import CustomCard from "./../components/common/nav/CustomCard";
+
 const Home = () => {
   return (
     <>
       {/* ======== CAROUSAL SECTION ========  */}
-      <section>
+      <section className="md:container md:mx-auto my-2 ">
         <div className="carousel w-full">
           <div id="slide1" className="carousel-item relative w-full">
             <img
@@ -61,6 +63,14 @@ const Home = () => {
             </div>
           </div>
         </div>{" "}
+      </section>
+
+      {/* ======== PRODUCTS SECTION ========  */}
+      <section className="lg:flex-1 text-center lg:text-left mb-8 lg:mb-0">
+        <h2 className=" text-center  font-semibold  text-3xl lg:text-5xl  mb-4">
+          Products Items
+        </h2>
+        <CustomCard />
       </section>
     </>
   );
