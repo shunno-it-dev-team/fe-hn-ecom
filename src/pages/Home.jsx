@@ -1,4 +1,5 @@
 import FaIconByKeyName from "../components/icons/FaIconByKeyName";
+import CustomCard from "./../components/common/nav/CustomCard";
 
 const Home = () => {
   const carouselData = [
@@ -39,7 +40,7 @@ const Home = () => {
   return (
     <>
       {/* ======== CAROUSAL SECTION ========  */}
-      <section>
+      <section className="md:container md:mx-auto my-2 ">
         <div className="carousel w-full">
           {carouselData.map(({ id, imgSrc, alt, prev, next }) => (
             <div
@@ -59,6 +60,14 @@ const Home = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ======== PRODUCTS SECTION ========  */}
+      <section className="lg:flex-1 text-center lg:text-left mb-8 lg:mb-0">
+        <h2 className=" text-center  font-semibold  text-3xl lg:text-5xl  mb-4">
+          Products Items
+        </h2>
+        <CustomCard />
       </section>
     </>
   );
