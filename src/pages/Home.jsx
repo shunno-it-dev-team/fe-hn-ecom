@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <>
       {/* ======== CAROUSAL SECTION ========  */}
-      <section className="md:container md:mx-auto my-2 ">
+      <header className="md:container md:mx-auto my-2 ">
         <div className="carousel w-full">
           {carouselData.map(({ id, imgSrc, alt, prev, next }) => (
             <div
@@ -60,15 +60,17 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
+      </header>
 
-      {/* ======== PRODUCTS SECTION ========  */}
-      <section className="lg:flex-1 text-center lg:text-left mb-8 lg:mb-0">
-        <h2 className=" text-center  font-semibold  text-3xl lg:text-5xl  mb-4">
-          Products Items
-        </h2>
-        <CustomCard />
-      </section>
+      <main className="flex flex-col gap-5">
+        {/* ======== PRODUCTS SECTION ========  */}
+        <section className="lg:flex-1 text-center lg:text-left mb-8 lg:mb-0">
+          <h2 className=" text-center  font-semibold  text-3xl lg:text-5xl  my-10">
+            Products Items
+          </h2>
+          <CustomCard />
+        </section>
+      </main>
     </>
   );
 };
