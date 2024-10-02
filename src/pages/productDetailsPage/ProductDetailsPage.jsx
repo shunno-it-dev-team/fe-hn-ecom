@@ -1,55 +1,55 @@
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
 const ProductDetailsPage = () => {
-  // Mock product data
-  const product = {
-    id: 1,
-    name: "Wireless Headphones",
-    description:
-      "Experience premium sound quality with our wireless headphones. Designed for comfort and built for long listening sessions.",
-    price: 89.99,
-    image: "https://via.placeholder.com/400",
-    features: [
-      "High-quality audio",
-      "Bluetooth 5.0",
-      "Noise-cancelling",
-      "Up to 24 hours battery life",
-    ],
-  };
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => setProduct(data))
+      .catch((err) => console.error("Failed to fetch product :", err));
+  }, [id]);
+
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-base-200 p-6">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-12">
-        {/* Product Image */}
-        <div className="w-full lg:w-1/2">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="rounded-lg shadow-lg w-full"
-          />
+    <div className=" card justify-center max-w-6xl mx-auto bg-base-200 flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-12">
+      <figure className="w-48 h-48 my-6 px-2 ">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="rounded-lg shadow-lg w-full"
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{product.title}</h2>
+        <p>
+          {product.description.length > 90
+            ? product.description.slice(0, 90) + "..."
+            : product.description}
+        </p>
+        <p className="text-2xl font-semibold text-primary">
+          ${product.price.toFixed(2)}
+        </p>
+        <div>
+          <h3 className="text-xl font-bold">Category:</h3>
+          <p className="capitalize">{product.category}</p>
         </div>
 
-        {/* Product Details */}
-        <div className="w-full lg:w-1/2 space-y-4">
-          <h1 className="text-4xl font-bold text-neutral">{product.name}</h1>
-          <p className="text-lg text-gray-600">{product.description}</p>
-          <p className="text-2xl font-semibold text-primary">
-            ${product.price.toFixed(2)}
-          </p>
-
-          {/* Features List */}
-          <div>
-            <h3 className="text-xl font-bold">Features:</h3>
-            <ul className="list-disc ml-5 space-y-2 text-gray-700">
-              {product.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex space-x-4 mt-6">
-            <button className="btn btn-primary">Add to Cart</button>
-            <button className="btn btn-outline">Back to Products</button>
-          </div>
+        <div className="card-actions justify-center">
+          <button className="btn btn-primary">Add to Cart</button>
+          <button className="btn btn-outline" onClick={() => navigate(-1)}>
+            Back to Products
+          </button>
         </div>
       </div>
     </div>

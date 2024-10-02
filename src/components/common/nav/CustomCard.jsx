@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { cn } from "../../../helpers/dynamicClassName";
+import { Link } from "react-router-dom";
+// import { cn } from "../../../helpers/dynamicClassName";
 
 const CustomCard = () => {
   const [products, setProducts] = useState([]);
@@ -82,9 +83,11 @@ const CustomCard = () => {
                   </div>
 
                   <div className="text-center space-x-2">
-                    <button className="btn btn-outline btn-primary btn-sm">
-                      Details
-                    </button>
+                    <Link to={`/product/${card.id}`}>
+                      <button className="btn btn-outline btn-primary btn-sm">
+                        Details
+                      </button>
+                    </Link>
                     <button className="btn btn-primary btn-sm">
                       Add To Cart
                     </button>
