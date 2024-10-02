@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const NavMobileTopMenuItems = ({ items }) => {
   return (
@@ -16,7 +17,7 @@ const NavMobileTopMenuItems = ({ items }) => {
             </details>
           ) : (
             // Otherwise, just render the item as a normal link
-            <a href={item.to}>{item.name}</a>
+            <Link to={item.to}>{item.name}</Link>
           )}
         </li>
       ))}
