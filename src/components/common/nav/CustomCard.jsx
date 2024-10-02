@@ -33,7 +33,7 @@ const CustomCard = () => {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="card card-compact m-6 p-6 bg-base-200 border border-gray-300 text-center"
+            className="card card-compact m-6 p-6 bg-base-200 border border-gray-100 text-center"
           >
             <figure>
               <img className="w-36" src={card.imgSrc} alt={card.title} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { publicNavMenuItems } from "../../menu-items/publicNavMenuItems";
 import NavDeskTopMenuItems from "./NavDeskTopMenuItems";
 import NavMobileTopMenuItems from "./NavMobileTopMenuItems";
@@ -83,15 +84,19 @@ const PublicNavbar = () => {
                 <span className="text-lg font-bold">8 Items</span>
                 <span className="text-info">Subtotal: $999</span>
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    View cart
-                  </button>
+                  <Link to="/cartPage">
+                    <button className="btn btn-primary btn-block">
+                      View cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className="dropdown dropdown-end">
-            <button className="btn btn-ghost btn-circle">
+
+          {/* ======= NOTIFICATION BUTTON ======= */}
+          <button className="btn btn-ghost btn-circle">
+            <Link to="/notificationPage">
               <div className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +114,11 @@ const PublicNavbar = () => {
                 </svg>
                 <span className="badge badge-xs badge-primary indicator-item"></span>
               </div>
-            </button>
+            </Link>
+          </button>
+
+          {/* ======= PROFILE SECTION ======= */}
+          <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
