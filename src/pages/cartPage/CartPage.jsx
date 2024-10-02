@@ -70,7 +70,7 @@ const CartPage = () => {
             </div>
 
             {/* Cart Summary */}
-            <div className="card shadow-md bg-white p-4">
+            <div className="card shadow-md bg-base-100 p-4">
               <h2 className="text-xl font-bold mb-2">Cart Summary</h2>
               <p className="text-gray-700">
                 Subtotal: &#2547;{total.toFixed(2)}

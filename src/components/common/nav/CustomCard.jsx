@@ -1,83 +1,99 @@
-const cardData = [
-  {
-    imgSrc:
-      "/src/assets/image/642aa45523af200eea0b32f7-men-039-s-watches-waterproof-luminous.jpg",
-    price: "12000 -18085 BDT",
-    title: "Watch",
-  },
-  {
-    imgSrc:
-      "/src/assets/image/642aa45523af200eea0b32f7-men-039-s-watches-waterproof-luminous.jpg",
-    price: "12000 -18085 BDT",
-    title: "Watch",
-  },
-  {
-    imgSrc:
-      "/src/assets/image/642aa45523af200eea0b32f7-men-039-s-watches-waterproof-luminous.jpg",
-    price: "12000 -18085 BDT",
-    title: "Watch",
-  },
-  {
-    imgSrc:
-      "/src/assets/image/642aa45523af200eea0b32f7-men-039-s-watches-waterproof-luminous.jpg",
-    price: "12000 -18085 BDT",
-    title: "Watch",
-  },
-];
+import { useEffect, useState } from "react";
+import { cn } from "../../../helpers/dynamicClassName";
 
 const CustomCard = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  console.log("products", products);
+
   return (
     <>
       {/* ======== CARD DESIGN ======== */}
-      <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-        {cardData.map((card, index) => (
-          <div
-            key={index}
-            className="card card-compact m-6 p-6 bg-base-200 border border-gray-100 text-center"
-          >
-            <figure>
-              <img className="w-36" src={card.imgSrc} alt={card.title} />
-            </figure>
-            <div className="card-body">
-              <p className="text-2xl font-bold">{card.price}</p>
-              <div className="rating rating-lg rating-half justify-center">
-                <input
-                  type="radio"
-                  name={`rating-${index}`}
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name={`rating-${index}`}
-                  className="mask mask-star-2 bg-orange-400"
-                  defaultChecked
-                />
-                <input
-                  type="radio"
-                  name={`rating-${index}`}
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name={`rating-${index}`}
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name={`rating-${index}`}
-                  className="mask mask-star-2 bg-orange-400"
-                />
+      <div className="max-w-screen-xl mx-auto">
+        <section className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {products.length > 0 &&
+            products.map((card, index) => (
+              <div
+                key={index}
+                className="card card-compact p-3 bg-base-200 hover:outline hover:shadow-none outline-1 outline-primary/20 text-center"
+              >
+                <figure>
+                  <img
+                    className="w-full h-56 object-cover object-top "
+                    src={card.image}
+                    alt={card.title}
+                  />
+                </figure>
+
+                <div className="card-body justify-between items-start">
+                  <div className="text-start">
+                    <h5 className="card-title text-start">
+                      {card.title.length > 22
+                        ? card.title.slice(0, 22) + "..."
+                        : card.title}
+                    </h5>
+                    <span className="text-xs capitalize">{card.category}</span>
+
+                    <div>
+                      <span className={"badge badge-outline capitalize "}>
+                        &#2547;{card.price}
+                      </span>
+                    </div>
+
+                    <div className="rating rating-lg rating-half justify-center">
+                      <input
+                        type="radio"
+                        name={`rating-${index}`}
+                        disabled
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name={`rating-${index}`}
+                        className="mask mask-star-2 bg-orange-400"
+                        disabled
+                      />
+                      <input
+                        type="radio"
+                        name={`rating-${index}`}
+                        className="mask mask-star-2 bg-orange-400"
+                        defaultChecked
+                        disabled
+                      />
+                      <input
+                        type="radio"
+                        name={`rating-${index}`}
+                        className="mask mask-star-2 bg-orange-400"
+                        disabled
+                      />
+                      <input
+                        type="radio"
+                        name={`rating-${index}`}
+                        className="mask mask-star-2 bg-orange-400"
+                        disabled
+                      />
+                    </div>
+                  </div>
+
+                  <div className="text-center space-x-2">
+                    <button className="btn btn-outline btn-primary btn-sm">
+                      Details
+                    </button>
+                    <button className="btn btn-primary btn-sm">
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="text-center space-y-4">
-                <h4 className="text-lg font-semibold">{card.title}</h4>
-                <button className="btn btn-outline text-[#F85559]">
-                  Details
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </section>
+            ))}
+        </section>
+      </div>
     </>
   );
 };
