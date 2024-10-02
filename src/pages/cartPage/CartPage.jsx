@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  // Sample cart data (can be replaced with actual data)
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -54,7 +54,7 @@ const CartPage = () => {
                   <div className="flex-1">
                     <h2 className="text-lg font-bold">{item.name}</h2>
                     <p className="text-gray-500">
-                      {item.price} x {item.quantity} BDT
+                      {item.price} x {item.quantity} &#2547;
                     </p>
                   </div>
                   <div>
@@ -72,15 +72,19 @@ const CartPage = () => {
             {/* Cart Summary */}
             <div className="card shadow-md bg-white p-4">
               <h2 className="text-xl font-bold mb-2">Cart Summary</h2>
-              <p className="text-gray-700">Subtotal: {total.toFixed(2)} BDT</p>
+              <p className="text-gray-700">
+                Subtotal: &#2547;{total.toFixed(2)}
+              </p>
 
               <div className="mt-4">
                 <button className="btn btn-primary w-full">
                   Proceed to Checkout
                 </button>
-                <button className="btn btn-outline w-full mt-2">
-                  Continue Shopping
-                </button>
+                <Link to="/">
+                  <button className="btn btn-outline w-full mt-2">
+                    Continue Shopping
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

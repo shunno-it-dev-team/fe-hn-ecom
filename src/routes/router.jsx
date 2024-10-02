@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import PublicLayout from "../layouts/PublicLayout";
 import NotificationPage from "../pages/notificationPage/NotificationPage";
 import CartPage from "../pages/cartPage/CartPage";
+import ProductDetailsPage from "../pages/productDetailsPage/ProductDetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/cartPage",
         element: <CartPage />,
+      },
+      {
+        path: "/productDetailsPage",
+        element: <ProductDetailsPage />,
       },
     ],
   },

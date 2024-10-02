@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const NotificationPage = () => {
-  // State to hold notifications (can be fetched from an API)
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -26,7 +25,6 @@ const NotificationPage = () => {
     },
   ]);
 
-  // Mark notification as read
   const markAsRead = (id) => {
     setNotifications((prev) =>
       prev.map((notification) =>
@@ -35,7 +33,6 @@ const NotificationPage = () => {
     );
   };
 
-  // Delete notification
   const deleteNotification = (id) => {
     setNotifications((prev) =>
       prev.filter((notification) => notification.id !== id)
@@ -64,10 +61,10 @@ const NotificationPage = () => {
                     <p className="text-gray-600">{notification.message}</p>
                     <p className="text-sm text-gray-400">{notification.time}</p>
                   </div>
-                  <div className="space-x-2 gap-2">
+                  <div className="space-x-4  ">
                     {!notification.read && (
                       <button
-                        className="btn btn-sm btn-primary"
+                        className="btn btn-sm btn-primary my-2"
                         onClick={() => markAsRead(notification.id)}
                       >
                         Mark as Read
