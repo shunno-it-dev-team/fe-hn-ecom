@@ -41,12 +41,12 @@ const Home = () => {
     <>
       {/* ======== CAROUSAL SECTION ========  */}
       <header className="md:container md:mx-auto my-2 ">
-        <div className="carousel w-full">
+        <div className="carousel w-full ">
           {carouselData.map(({ id, imgSrc, alt, prev, next }) => (
             <div
               key={id}
               id={`slide${id}`}
-              className="carousel-item relative w-full"
+              className="carousel-item relative  w-full"
             >
               <img src={imgSrc} alt={alt} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

@@ -5,6 +5,8 @@ import NotificationPage from "../pages/notificationPage/NotificationPage";
 import CartPage from "../pages/cartPage/CartPage";
 import ProductDetailsPage from "../pages/productDetailsPage/ProductDetailsPage";
 import ContactUsPage from "../pages/contactUsPage/ContactUsPage";
+import AboutPage from "../pages/aboutPage/AboutPage";
+import SearchingPage from "../pages/searchingPage/SearchingPage";
 
 export const router = createBrowserRouter([
   {
@@ -28,8 +30,16 @@ export const router = createBrowserRouter([
         element: <ProductDetailsPage />,
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <ContactUsPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/searchingPage",
+        element: <SearchingPage />,
       },
     ],
   },

@@ -9,7 +9,7 @@ const NavDeskTopMenuItems = ({ items }) => {
           <Link to={item.to}>{item.name}</Link>
           {/* Check if there are subMenuItems and recursively render */}
           {item.subMenuItems && (
-            <ul className="p-2">
+            <ul className="p-2 ">
               <NavDeskTopMenuItems items={item.subMenuItems} />
             </ul>
           )}
