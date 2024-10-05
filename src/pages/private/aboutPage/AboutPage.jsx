@@ -1,10 +1,10 @@
 const AboutPage = () => {
   return (
     <section className="grid lg:grid-cols-2 grid-cols-1 items-center   mx-auto w-[90%] gap-10 ">
-      {/* writing section  */}
+      {/* ========= writing section ========= */}
       <div className="">
         <h3 className="text-3xl font-semibold text-blue-600 font-serif">
-          Meet Our Team
+          About us
         </h3>
         <p className=" text-justify mt-6  ">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
@@ -20,10 +20,9 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* picture section  */}
+      {/*========= picture section ========= */}
       <div className="w-full">
         <img src="/src/assets/image/Ecommerce web page (1).gif" alt="" />
-
       </div>
     </section>
   );

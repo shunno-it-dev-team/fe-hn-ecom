@@ -39,7 +39,7 @@ const PublicNavbar = () => {
       </div>
 
       <div className=" navbar-center">
-        <p>HISAB NIKASH ECOM</p>
+        <img className="w-20" src="/src/assets/logo/logo-520e4690.png" alt="" />
       </div>
 
       <div className=" navbar-end flex-none gap-2">

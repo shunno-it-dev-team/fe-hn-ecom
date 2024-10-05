@@ -1,12 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
 import PublicLayout from "../layouts/PublicLayout";
-import NotificationPage from "../pages/notificationPage/NotificationPage";
-import CartPage from "../pages/cartPage/CartPage";
-import ProductDetailsPage from "../pages/productDetailsPage/ProductDetailsPage";
-import ContactUsPage from "../pages/contactUsPage/ContactUsPage";
-import AboutPage from "../pages/aboutPage/AboutPage";
-import SearchingPage from "../pages/searchingPage/SearchingPage";
+import Home from './../pages/private/homePage/Home';
+import NotificationPage from './../pages/private/notificationPage/NotificationPage';
+import CartPage from './../pages/private/cartPage/CartPage';
+import ProductDetailsPage from './../pages/private/productDetailsPage/ProductDetailsPage';
+import ContactUsPage from './../pages/private/contactUsPage/ContactUsPage';
+import AboutPage from './../pages/private/aboutPage/AboutPage';
+import SearchingPage from "../pages/private/searchingPage/SearchingPage";
+import LoginPage from './../pages/public/loginPage/LoginPage';
+import RegisterPage from "../pages/public/registerPage/RegisterPage";
+import ForgotPassword from "../pages/public/forgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +43,18 @@ export const router = createBrowserRouter([
       {
         path: "/searchingPage",
         element: <SearchingPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage/>,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "/forgot",
+        element: <ForgotPassword />,
       },
     ],
   },

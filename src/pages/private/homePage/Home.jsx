@@ -1,5 +1,5 @@
-import FaIconByKeyName from "../components/icons/FaIconByKeyName";
-import CustomCard from "./../components/common/nav/CustomCard";
+import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
+import CustomCard from "../../../components/common/nav/CustomCard";
 
 const Home = () => {
   const carouselData = [
