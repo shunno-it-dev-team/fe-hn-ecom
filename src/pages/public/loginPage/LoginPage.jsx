@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
-    <div className=" flex flex-col justify-center h-screen ">
+    <div className=" flex flex-col justify-center h-screen overflow-hidden mb-10  ">
       <div className="w-full p-6 m-auto bg-base-100 rounded-md shadow-xl  lg:max-w-lg">
         <div className="flex justify-center  ">
           <img

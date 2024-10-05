@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
-    <div className="flex flex-col justify-center h-screen overflow-hidden mt-10 mb-10 border">
-      <div className="w-full p-6 m-auto bg-base-100 rounded-md shadow-xl  lg:max-w-lg border">
+    <div className="flex flex-col justify-center h-screen overflow-hidden  mb-10 ">
+      <div className="w-full p-6 m-auto bg-base-200 rounded-md shadow-xl  lg:max-w-lg ">
         <div className="flex justify-center  ">
           <img
             className="w-40"
@@ -13,26 +13,28 @@ const RegisterPage = () => {
             alt=""
           />
         </div>
-        <form className="space-y-2">
-          <div>
-            <label className="label">
-              <span className="text-base label-text font-serif">Name</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full input input-bordered input-primary"
-            />
-          </div>
-          <div>
-            <label className="label">
-              <span className="text-base label-text font-serif">Email</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Email Address"
-              className="w-full input input-bordered input-primary"
-            />
+        <form className="space-y-2 mt-6">
+          <div className="flex justify-between">
+            <div>
+              <label className="label">
+                <span className="text-base label-text font-serif">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full input input-bordered input-primary"
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="text-base label-text font-serif">Email</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Email Address"
+                className="w-full input input-bordered input-primary"
+              />
+            </div>
           </div>
           <div>
             <label className="label">
@@ -78,12 +80,15 @@ const RegisterPage = () => {
           <p className="px-3 ">OR </p>
           <hr className="w-full" />
         </div>
-        <div className="flex my-6  gap-2 justify-center items-center ">
-          <button className=" p-2  hover:shadow-xl">
-            <FcGoogle />
+        <div className="flex my-6 gap-4 justify-center items-center">
+          <button className="p-3 bg-base-100  border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out">
+            <FcGoogle className="text-3xl" />
           </button>
-          <button className="p-2  hover:shadow-xl">
-            <RxGithubLogo />
+          <button className="p-3 bg-base-100 border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out">
+            <RxGithubLogo className="text-3xl" />
+          </button>
+          <button className="p-3 bg-base-100 border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out">
+            F
           </button>
         </div>
       </div>

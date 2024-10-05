@@ -22,7 +22,7 @@ const ProductDetailsPage = () => {
   }
 
   return (
-    <div className=" card justify-center max-w-6xl mx-auto bg-base-200 flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-12">
+    <div className=" card min-h-screen  max-w-6xl mx-auto bg-base-200 flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-12">
       <figure className="w-48 h-48 my-6 px-2 ">
         <img
           src={product.image}
