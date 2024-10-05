@@ -20,14 +20,17 @@ const ForgotPassword = () => {
             <input
               type="text"
               placeholder="Enter your email"
-              className="input input-bordered input-sm "
+              className="input input-bordered input-sm  input-primary"
             />
 
-            <button className="btn btn-primary w-full">Send Email</button>
+            <button className="btn btn-info w-full">Send Email</button>
 
             <div>
               Remember your password?
-              <Link to="/login" className="btn btn-sm btn-link">
+              <Link
+                to="/login"
+                className="text-md font-serif text-blue-600 hover:underline hover:text-purple-600"
+              >
                 Login
               </Link>
             </div>

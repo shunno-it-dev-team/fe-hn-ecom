@@ -32,18 +32,49 @@ const LoginPage = () => {
               className="w-full input input-bordered input-primary"
             />
           </div>
-          <Link to="/forgot">
-            <a
-              href="#"
-              className="text-xs text-blue-600 hover:underline hover:text-purple-600"
-            >
-              Forget Password?
-            </a>
-          </Link>
+
+          <div className="flex justify-between ">
+            <div className="flex items-center gap-1">
+              <input
+                type="checkbox"
+                defaultChecked
+                className="checkbox checkbox-sm"
+              />
+
+              <p> Remember me</p>
+            </div>
+            <div>
+              <Link to="/forgot">
+                <a
+                  href="#"
+                  className="text-md font-serif text-blue-600 hover:underline hover:text-purple-600"
+                >
+                  Forget Password?
+                </a>
+              </Link>
+            </div>
+          </div>
+
           <div>
-            <button className=" btn btn-block btn-info">Login</button>
+            <button className=" btn btn-block btn-info font-serif">
+              Login
+            </button>
           </div>
         </form>
+        <div className="divider font-serif">OR</div>
+        <div className="text-center">
+          <span>
+            Don&apos;t have an account?
+            <Link to="/register">
+              <a
+                href="#"
+                className="text-md font-serif text-blue-600 hover:underline hover:text-purple-600"
+              >
+                Sign up now
+              </a>
+            </Link>
+          </span>
+        </div>
       </div>
     </div>
   );
