@@ -87,9 +87,6 @@ const RegisterPage = () => {
           <button className="p-3 bg-base-100 border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out">
             <RxGithubLogo className="text-3xl" />
           </button>
-          <button className="p-3 bg-base-100 border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-xl transition duration-300 ease-in-out">
-            F
-          </button>
         </div>
       </div>
     </div>
