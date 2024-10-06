@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const NavMobileTopMenuItems = ({ items }) => {
+const NavDeskTopMenuItems = ({ items, className }) => {
   return (
     <>
       {items.map((item, index) => (
@@ -11,8 +11,8 @@ const NavMobileTopMenuItems = ({ items }) => {
 
             <details>
               <summary>{item.name}</summary>
-              <ul className="p-2">
-                <NavMobileTopMenuItems items={item.subMenuItems} />
+              <ul className={`p-2 ${className}`}>
+                <NavDeskTopMenuItems items={item.subMenuItems} />
               </ul>
             </details>
           ) : (
@@ -25,7 +25,7 @@ const NavMobileTopMenuItems = ({ items }) => {
   );
 };
 
-NavMobileTopMenuItems.propTypes = {
+NavDeskTopMenuItems.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -34,6 +34,7 @@ NavMobileTopMenuItems.propTypes = {
     })
   ).isRequired,
   isSubmenu: PropTypes.bool,
+  className: PropTypes.string,
 };
 
-export default NavMobileTopMenuItems;
+export default NavDeskTopMenuItems;

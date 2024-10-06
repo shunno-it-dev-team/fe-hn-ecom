@@ -7,21 +7,21 @@ import {
 // project import
 import { successAndErrorHandler } from "./response-handler";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { apiService } from "../redux/api/apiService";
+import { apiService } from "./api/services/apiService";
+import { reducers } from "./reducers";
 
 //====|| REDUX TOOLKIT - MAIN STORE ||==== //
 const store = configureStore({
-  reducer: {
-    //   pagination: paginationReducer,
-    [apiService.reducerPath]: apiService.reducer,
-  },
+  reducer: reducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false })
       .concat(apiService.middleware)
       .concat(successAndErrorHandler),
 });
+
 const { dispatch } = store;
 const useDispatch = () => useAppDispatch();
+
 const useSelector = useAppSelector;
 setupListeners(store.dispatch);
 

@@ -1,13 +1,22 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes/router";
 import { Toaster } from "sonner";
+import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
-function App() {
+function App({ children }) {
+  const {
+    global: { theme },
+  } = useSelector((state) => state);
+
   return (
-    <RouterProvider router={router}>
+    <div data-theme={theme}>
+      {children}
       <Toaster />
-    </RouterProvider>
+    </div>
   );
 }
+
+App.propTypes = {
+  children: PropTypes.node,
+};
 
 export default App;

@@ -4,6 +4,36 @@ export default {
   theme: {
     extend: {},
   },
+  daisyui: {
+    themes: [
+      {
+        light: {
+          // eslint-disable-next-line no-undef
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#fa9d32",
+          secondary: "teal",
+          "primary-content": "#fff",
+          "secondary-content": "#fff",
+          "accent-content": "#fff",
+          "info-content": "#fff",
+          "success-content": "#fff",
+        },
+        dark: {
+          // eslint-disable-next-line no-undef
+          ...require("daisyui/src/theming/themes")["dark"],
+          primary: "#fa9d32",
+          secondary: "teal",
+          "base-100": "#111827",
+          "base-200": "#1F2937",
+          "primary-content": "#fff",
+          "secondary-content": "#fff",
+          "accent-content": "#fff",
+          "info-content": "#fff",
+          "success-content": "#fff",
+        },
+      },
+    ],
+  },
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
 };

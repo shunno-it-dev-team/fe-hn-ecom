@@ -4,11 +4,14 @@ import PublicFooter from "../components/common/PublicFooter";
 
 const PublicLayout = () => {
   return (
-    <div>
+    <>
       <PublicNavbar />
-      <Outlet />
+      <main className="bg-base-200 pb-10">
+        <Outlet />
+      </main>
+
       <PublicFooter />
-    </div>
+    </>
   );
 };
 

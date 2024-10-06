@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {baseURL} from "./baseURL"
+import { baseURL } from "../baseURL";
 const getBearerToken = () => {
   return localStorage.getItem("token");
 };
 const baseQuery = fetchBaseQuery({
-  baseUrl:baseURL,
+  baseUrl: baseURL,
   prepareHeaders: (headers) => {
     const token = getBearerToken();
     if (token) {

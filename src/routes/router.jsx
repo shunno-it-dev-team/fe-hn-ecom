@@ -1,20 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
 import PublicLayout from "../layouts/PublicLayout";
-import Home from './../pages/private/homePage/Home';
-import NotificationPage from './../pages/private/notificationPage/NotificationPage';
-import CartPage from './../pages/private/cartPage/CartPage';
-import ProductDetailsPage from './../pages/private/productDetailsPage/ProductDetailsPage';
-import ContactUsPage from './../pages/private/contactUsPage/ContactUsPage';
-import AboutPage from './../pages/private/aboutPage/AboutPage';
+import Home from "./../pages/private/homePage/Home";
+import NotificationPage from "./../pages/private/notificationPage/NotificationPage";
+import CartPage from "./../pages/private/cartPage/CartPage";
+import ProductDetailsPage from "./../pages/private/productDetailsPage/ProductDetailsPage";
+import ContactUsPage from "./../pages/private/contactUsPage/ContactUsPage";
+import AboutPage from "./../pages/private/aboutPage/AboutPage";
 import SearchingPage from "../pages/private/searchingPage/SearchingPage";
-import LoginPage from './../pages/public/loginPage/LoginPage';
+import LoginPage from "./../pages/public/loginPage/LoginPage";
 import RegisterPage from "../pages/public/registerPage/RegisterPage";
 import ForgotPassword from "../pages/public/forgotPassword/ForgotPassword";
+import App from "../App";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <PublicLayout />,
+    element: (
+      <App>
+        <PublicLayout />
+      </App>
+    ),
     children: [
       {
         path: "/",
@@ -46,7 +51,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <LoginPage/>,
+        element: <LoginPage />,
       },
       {
         path: "/register",
