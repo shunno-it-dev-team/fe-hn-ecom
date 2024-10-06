@@ -1,79 +1,48 @@
-import { Link } from "react-router-dom";
-
 const LoginPage = () => {
   return (
-    <div className=" flex flex-col justify-center h-screen overflow-hidden mb-10  ">
-      <div className="w-full p-6 m-auto bg-base-100 rounded-md shadow-xl  lg:max-w-lg">
-        <div className="flex justify-center  ">
-          <img
-            className="w-40"
-            src="/src/assets/logo/logo-520e4690.png"
-            alt=""
-          />
+    <div className="hero min-h-screen max-w-screen-lg mx-auto">
+      <div className="hero-content flex-col lg:flex-row">
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl font-bold">Login now!</h1>
+          <p className="py-6">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
+          </p>
         </div>
-        <form className="space-y-4">
-          <div>
-            <label className="label">
-              <span className="text-base label-text font-serif">Email</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Email Address"
-              className="w-full input input-bordered input-primary"
-            />
-          </div>
-          <div>
-            <label className="label">
-              <span className="text-base label-text font-serif">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              className="w-full input input-bordered input-primary"
-            />
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex items-center gap-1">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 border">
+          <form className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
               <input
-                type="checkbox"
-                defaultChecked
-                className="checkbox checkbox-sm"
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
               />
-
-              <p> Remember me</p>
             </div>
-            <div>
-              <Link to="/forgot">
-                <a
-                  href="#"
-                  className="text-md font-serif text-blue-600 hover:underline hover:text-purple-600"
-                >
-                  Forget Password?
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover">
+                  Forgot password?
                 </a>
-              </Link>
+              </label>
             </div>
-          </div>
-
-          <div>
-            <button className=" btn btn-block btn-info font-serif">
-              Login
-            </button>
-          </div>
-        </form>
-        <div className="divider font-serif">OR</div>
-        <div className="text-center">
-          <span>
-            Don&apos;t have an account?
-            <Link to="/register">
-              <a
-                href="#"
-                className="text-md font-serif text-blue-600 hover:underline hover:text-purple-600"
-              >
-                Sign up now
-              </a>
-            </Link>
-          </span>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Login</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

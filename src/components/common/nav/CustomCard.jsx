@@ -11,8 +11,6 @@ const CustomCard = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  console.log("products", products);
-
   return (
     <>
       {/* ======== CARD DESIGN ======== */}
@@ -22,21 +20,29 @@ const CustomCard = () => {
             products.map((card, index) => (
               <div
                 key={index}
-                className="card card-compact p-3 bg-base-200 hover:outline hover:shadow-none outline-1 outline-primary/20 text-center"
+                className="card card-compact p-3 bg-base-100 hover:outline hover:shadow-none outline-1 outline-primary/40 text-center"
               >
-                <figure>
+                <figure className="relative bg-white">
+                  {index % 5 == 0 && (
+                    <>
+                      <div className="badge badge-accent absolute z-10 top-1 right-1">
+                        {index + 1} % OFF
+                      </div>
+                      <div className="absolute top-0 right-0 h-10 w-20 blur-md bg-accent/10"></div>
+                    </>
+                  )}
                   <img
-                    className="w-full h-56 object-cover object-top "
+                    className="w-full aspect-[4/3] object-contain p-2"
                     src={card.image}
                     alt={card.title}
                   />
                 </figure>
 
-                <div className="card-body justify-between items-start">
+                <div className="card-body !p-0 justify-between items-start">
                   <div className="text-start">
-                    <h5 className="card-title text-start">
-                      {card.title.length > 22
-                        ? card.title.slice(0, 22) + "..."
+                    <h5 className="font-bold text-start">
+                      {card.title.length > 40
+                        ? card.title.slice(0, 40) + "..."
                         : card.title}
                     </h5>
                     <span className="text-xs capitalize">{card.category}</span>

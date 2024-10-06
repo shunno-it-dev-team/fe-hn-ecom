@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const NavDeskTopMenuItems = ({ items }) => {
+const NavMobileTopMenuItems = ({ items }) => {
   return (
     <>
       {items.map((item, index) => (
@@ -10,7 +10,7 @@ const NavDeskTopMenuItems = ({ items }) => {
           {/* Check if there are subMenuItems and recursively render */}
           {item.subMenuItems && (
             <ul className="p-2 ">
-              <NavDeskTopMenuItems items={item.subMenuItems} />
+              <NavMobileTopMenuItems items={item.subMenuItems} />
             </ul>
           )}
         </li>
@@ -19,7 +19,7 @@ const NavDeskTopMenuItems = ({ items }) => {
   );
 };
 
-NavDeskTopMenuItems.propTypes = {
+NavMobileTopMenuItems.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -29,4 +29,4 @@ NavDeskTopMenuItems.propTypes = {
   ).isRequired,
 };
 
-export default NavDeskTopMenuItems;
+export default NavMobileTopMenuItems;
