@@ -3,7 +3,7 @@ const ContactUsPage = () => {
     <div className="flex flex-col lg:flex-row lg:card-side gap-10 p-6">
       {/* ========== form section ========== */}
       <form className="card-body shadow-md rounded-md p-6 h-screen w-full lg:w-1/4">
-        <h3 className="text-3xl font-bold mb-6text-primary">Write us</h3>
+        <h3 className="text-3xl font-bold mb-6 text-primary">Write us</h3>
 
         <div className="form-control mb-4">
           <label className="label">
