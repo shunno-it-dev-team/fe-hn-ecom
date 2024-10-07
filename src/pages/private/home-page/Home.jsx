@@ -1,4 +1,4 @@
-import CustomCard from "../../../components/common/nav/CustomCard";
+import CustomCard from "../../../components/common/CustomCard";
 import Banner from "../../../components/page/home/Banner";
 import Container from "../../../components/common/Container";
 

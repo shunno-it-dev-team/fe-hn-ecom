@@ -45,10 +45,15 @@ const CustomCard = () => {
                         ? card.title.slice(0, 40) + "..."
                         : card.title}
                     </h5>
+
                     <span className="text-xs capitalize">{card.category}</span>
 
                     <div>
-                      <span className={"badge badge-outline capitalize "}>
+                      <span
+                        className={
+                          "badge badge-success badge-outline capitalize"
+                        }
+                      >
                         &#2547;{card.price}
                       </span>
                     </div>

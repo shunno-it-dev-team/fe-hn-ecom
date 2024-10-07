@@ -23,7 +23,7 @@ const PublicFooter = () => {
       </nav>
       <form>
         <h6 className="footer-title">Newsletter</h6>
-        <fieldset className="form-control w-80">
+        <fieldset className="form-control">
           <label className="label">
             <span className="label-text">Enter your email address</span>
           </label>
@@ -31,9 +31,11 @@ const PublicFooter = () => {
             <input
               type="text"
               placeholder="username@site.com"
-              className="input input-bordered join-item"
+              className="input input-bordered input-sm join-item"
             />
-            <button className="btn btn-primary join-item">Subscribe</button>
+            <button className="btn btn-sm btn-primary join-item">
+              Subscribe
+            </button>
           </div>
         </fieldset>
       </form>
