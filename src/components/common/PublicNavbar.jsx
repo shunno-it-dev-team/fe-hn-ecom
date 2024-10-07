@@ -1,18 +1,12 @@
-import { useSelector } from "react-redux";
 import { publicNavMenuItems } from "../../menu-items/publicNavMenuItems";
 import NavDeskTopMenuItems from "./nav/NavDeskTopMenuItems";
 import NavMobileTopMenuItems from "./nav/NavMobileTopMenuItems";
 import { setThemeToRedux } from "../../redux/reducers/globalSlice";
 import CustomModal from "./CustomModal";
 import AuthWrapper from "../../pages/public/auth/AuthWrapper";
+import PropTypes from "prop-types";
 
-const PublicNavbar = () => {
-  const {
-    global: { theme },
-  } = useSelector((state) => state);
-
-  const user = false;
-
+const PublicNavbar = ({ theme, user }) => {
   return (
     <div className="navbar bg-primary sticky text-base-100 top-0 z-30">
       {/* NAVBAR START */}
@@ -51,16 +45,18 @@ const PublicNavbar = () => {
       </div>
 
       {/* NAVBAR CENTER */}
-      <div className="navbar-center">
-        <img
-          src="https://eonbazar.com/images/Eon-Bazar_Logo-final.png"
-          alt=""
-          className="btn btn-ghost text-xl hover:bg-transparent"
-        />
+      <div className="navbar-center ">
+        <button className="btn btn-ghost text-xl hover:bg-transparent">
+          <img
+            src="https://eonbazar.com/images/Eon-Bazar_Logo-final.png"
+            alt=""
+            className="w-auto h-6"
+          />
+        </button>
       </div>
 
       {/* NAVBAR END */}
-      <div className="navbar-end gap-2">
+      <div className="navbar-end gap-2 hidden lg:flex">
         <label className="input input-sm border-base-100/20 text-base-100 focus:outline-offset-0 focus:outline-1 focus-within:outline-offset-0 focus-within:outline-1 bg-base-100/20 flex items-center gap-2">
           <input
             type="text"
@@ -254,6 +250,11 @@ const PublicNavbar = () => {
       </CustomModal>
     </div>
   );
+};
+
+PublicNavbar.propTypes = {
+  theme: PropTypes.string.isRequired,
+  user: PropTypes.object,
 };
 
 export default PublicNavbar;

@@ -8,9 +8,6 @@ import ProductDetailsPage from "../pages/private/product-details-page/ProductDet
 import ContactUsPage from "../pages/private/contact-us-page/ContactUsPage";
 import AboutPage from "../pages/private/about-page/AboutPage";
 import SearchingPage from "../pages/private/searching-page/SearchingPage";
-import LoginPage from "../pages/public/auth/login-page/LoginPage";
-import RegisterPage from "../pages/public/auth/register-page/RegisterPage";
-import ForgotPassword from "../pages/public/auth/forgot-password/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -48,18 +45,6 @@ export const router = createBrowserRouter([
       {
         path: "/searchingPage",
         element: <SearchingPage />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
-      {
-        path: "/register",
-        element: <RegisterPage />,
-      },
-      {
-        path: "/forgot",
-        element: <ForgotPassword />,
       },
     ],
   },
