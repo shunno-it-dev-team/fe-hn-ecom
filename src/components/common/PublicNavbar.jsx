@@ -3,12 +3,15 @@ import { publicNavMenuItems } from "../../menu-items/publicNavMenuItems";
 import NavDeskTopMenuItems from "./nav/NavDeskTopMenuItems";
 import NavMobileTopMenuItems from "./nav/NavMobileTopMenuItems";
 import { setThemeToRedux } from "../../redux/reducers/globalSlice";
-// import { cn } from "../../helpers/dynamicClassName";
+import CustomModal from "./CustomModal";
+import AuthWrapper from "../../pages/public/auth/AuthWrapper";
 
 const PublicNavbar = () => {
   const {
     global: { theme },
   } = useSelector((state) => state);
+
+  const user = false;
 
   return (
     <div className="navbar bg-primary sticky text-base-100 top-0 z-30">
@@ -50,7 +53,6 @@ const PublicNavbar = () => {
       {/* NAVBAR CENTER */}
       <div className="navbar-center">
         <img
-          // className="h-10 w-auto"
           src="https://eonbazar.com/images/Eon-Bazar_Logo-final.png"
           alt=""
           className="btn btn-ghost text-xl hover:bg-transparent"
@@ -137,6 +139,7 @@ const PublicNavbar = () => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </div>
+
           <div
             tabIndex={0}
             className="card card-compact dropdown-content bg-primary z-[1] mt-3 w-52 shadow"
@@ -194,41 +197,62 @@ const PublicNavbar = () => {
           </div>
         </div>
 
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-sm btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-sm btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                />
+              </div>
             </div>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content rounded-box z-10 bg-primary mt-3 w-52 p-2 shadow"
-          >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content rounded-box z-10 bg-primary mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </a>
+              </li>
 
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
-          </ul>
-        </div>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <>
+            <label
+              htmlFor="login-page"
+              className="btn btn-sm btn-ghost btn-outline border-base-100 text-base-100 rounded-3xl"
+            >
+              Login
+            </label>
+          </>
+        )}
       </div>
+
+      <CustomModal
+        {...{
+          title: "Join",
+          modalId: "login-page",
+          hasAction: false,
+          closeRef: null,
+        }}
+      >
+        <AuthWrapper />
+      </CustomModal>
     </div>
-  
   );
 };
 
