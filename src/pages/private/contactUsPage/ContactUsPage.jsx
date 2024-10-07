@@ -3,7 +3,7 @@ const ContactUsPage = () => {
     <div className="flex flex-col lg:flex-row lg:card-side gap-10 p-6">
       {/* ========== form section ========== */}
       <form className="card-body shadow-md rounded-md p-6 h-screen w-full lg:w-1/4">
-        <h3 className="text-3xl font-bold mb-6 text-gray-800">Write us</h3>
+        <h3 className="text-3xl font-bold mb-6text-primary">Write us</h3>
 
         <div className="form-control mb-4">
           <label className="label">
@@ -66,17 +66,18 @@ const ContactUsPage = () => {
           </button>
         </div>
       </form>
-      {/* ========== contact section */}
-      <div className="card-body items-start rounded-md p-6 w-full lg:w-1/2">
-        <h1 className="text-4xl font-bold  text-gray-800 text-center lg:text-left">
-          Contact Information
-        </h1>
-        <p className=" text-primary text-center lg:text-left">
-          We are open for any suggestion or just to have a chat.
-        </p>
-
+      {/* ========== contact section ========== */}
+      <div className="card-body items-start mt-28 rounded-md p-6 w-full lg:w-1/2">
         <div className="mb-4">
-          <p className="font-bold text-lg text-gray-800">Address:</p>
+          <h1 className="text-4xl font-bold text-primary text-center lg:text-left">
+            Contact Information
+          </h1>
+          <p className=" text-primary text-center lg:text-left">
+            We are open for any suggestion or just to have a chat.
+          </p>
+        </div>
+        <div className="mb-4">
+          <p className="font-bold text-lg text-primary">Address:</p>
           <p className="text-primary">
             রাজশাহী অফিস ঠিকানাঃ ২১৬/১, পশ্চিম তালাইমারি, কাজলা, বোয়ালিয়া,
             রাজশাহী-৬২০৪
@@ -84,17 +85,17 @@ const ContactUsPage = () => {
         </div>
 
         <div className="mb-4">
-          <p className="font-bold text-lg text-gray-800">Phone:</p>
+          <p className="font-bold text-lg text-primary">Phone:</p>
           <p className="text-primary">০১৮৯৬৪৮৮৪৮০</p>
         </div>
 
         <div className="mb-4">
-          <p className="font-bold text-lg text-gray-800">Email:</p>
+          <p className="font-bold text-lg text-primary">Email:</p>
           <p className="text-primary">hisabnikash@gmail.com</p>
         </div>
 
         <div className="mb-4">
-          <p className="font-bold text-lg text-gray-800">Website:</p>
+          <p className="font-bold text-lg text-primary">Website:</p>
           <a
             href="https://hisabnikashbd.com/"
             className="text-primary hover:underline"
