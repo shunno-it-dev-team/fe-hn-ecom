@@ -1,96 +1,106 @@
 const ContactUsPage = () => {
   return (
-    <div className="hero mx-auto my-10 bg-base-200 w-[90%]">
-      <div className="hero-content flex-col  lg:flex-row-reverse  ">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Contact Information</h1>
-          <p className="py-6">
-            We are open for any suggestion or just to have a chat.
-          </p>
+    <div className="flex flex-col lg:flex-row lg:card-side gap-10 p-6">
+      {/* ========== form section ========== */}
+      <form className="card-body shadow-md rounded-md p-6 h-screen w-full lg:w-1/4">
+        <h3 className="text-3xl font-bold mb-6 text-gray-800">Write us</h3>
 
-          <div className="mb-4 flex items-start">
-            <div>
-              <p className="font-bold text-start">Address:</p>
-              <p>
-                রাজশাহী অফিস ঠিকানাঃ ২১৬/১, পশ্চিম তালাইমারি, কাজলা, বোয়ালিয়া,
-                রাজশাহী-৬২০৪
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-4 flex items-start">
-            <div>
-              <p className="font-bold">Phone:</p>
-              <p>০১৮৯৬৪৮৮৪৮০</p>
-            </div>
-          </div>
-
-          <div className="mb-4 flex items-start">
-            <div>
-              <p className="font-bold">Email:</p>
-              <p>hisabnikash@gmail.com</p>
-            </div>
-          </div>
-
-          <div className="mb-4 flex items-start">
-            <div>
-              <p className="font-bold">Website:</p>
-              <p>https://hisabnikashbd.com/</p>
-            </div>
-          </div>
+        <div className="form-control mb-4">
+          <label className="label">
+            <span className="label-text  text-lg font-semibold text-primary">
+              Name
+            </span>
+          </label>
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            required
+          />
         </div>
 
-        <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
-          <form className="card-body">
-            <h3 className="text-2xl font-bold mb-4">Write us</h3>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text ">Name</span>
-              </label>
-              <input
-                type="name"
-                placeholder="name"
-                className="input input-bordered"
-                required
-              />
-            </div>
+        <div className="form-control mb-4">
+          <label className="label">
+            <span className="label-text text-lg font-semibold text-primary">
+              Email
+            </span>
+          </label>
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            required
+          />
+        </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text  ">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="email"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text  ">Subject</span>
-              </label>
-              <input
-                type="subject"
-                placeholder="subject"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text  ">Message</span>
-              </label>
-              <textarea
-                className="textarea textarea-bordered"
-                placeholder="Message"
-              ></textarea>
-            </div>
+        <div className="form-control mb-4">
+          <label className="label">
+            <span className="label-text text-lg font-semibold text-primary">
+              Subject
+            </span>
+          </label>
+          <input
+            type="text"
+            placeholder="Subject"
+            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            required
+          />
+        </div>
 
-            <div className="form-control mt-6">
-              <button className="btn  btn-warning  "> Send Message </button>
-            </div>
-          </form>
+        <div className="form-control mb-6">
+          <label className="label">
+            <span className="label-text text-lg font-semibold text-primary">
+              Message
+            </span>
+          </label>
+          <textarea
+            className="textarea textarea-bordered rounded-md focus:border-primary focus:text-secondary h-24"
+            placeholder="Your message"
+            required
+          ></textarea>
+        </div>
+
+        <div className="form-control">
+          <button className="btn btn-warning w-full py-3 text-lg font-semibold rounded-md">
+            Send Message
+          </button>
+        </div>
+      </form>
+      {/* ========== contact section */}
+      <div className="card-body items-start rounded-md p-6 w-full lg:w-1/2">
+        <h1 className="text-4xl font-bold  text-gray-800 text-center lg:text-left">
+          Contact Information
+        </h1>
+        <p className=" text-primary text-center lg:text-left">
+          We are open for any suggestion or just to have a chat.
+        </p>
+
+        <div className="mb-4">
+          <p className="font-bold text-lg text-gray-800">Address:</p>
+          <p className="text-primary">
+            রাজশাহী অফিস ঠিকানাঃ ২১৬/১, পশ্চিম তালাইমারি, কাজলা, বোয়ালিয়া,
+            রাজশাহী-৬২০৪
+          </p>
+        </div>
+
+        <div className="mb-4">
+          <p className="font-bold text-lg text-gray-800">Phone:</p>
+          <p className="text-primary">০১৮৯৬৪৮৮৪৮০</p>
+        </div>
+
+        <div className="mb-4">
+          <p className="font-bold text-lg text-gray-800">Email:</p>
+          <p className="text-primary">hisabnikash@gmail.com</p>
+        </div>
+
+        <div className="mb-4">
+          <p className="font-bold text-lg text-gray-800">Website:</p>
+          <a
+            href="https://hisabnikashbd.com/"
+            className="text-primary hover:underline"
+          >
+            https://hisabnikashbd.com/
+          </a>
         </div>
       </div>
     </div>

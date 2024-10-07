@@ -1,50 +1,5 @@
 const AboutPage = () => {
   return (
-    // <section className="grid lg:grid-cols-2 grid-cols-1 items-center   mx-auto w-[90%] gap-10 ">
-    //   {/* ========= writing section ========= */}
-    //   <div className="">
-    //     <h3 className="text-3xl font-semibold text-blue-600 font-serif">
-    //       About us
-    //     </h3>
-    //     <p className=" text-justify mt-6  ">
-    //       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
-    //       adipisci cupiditate exercitationem debitis sit voluptates autem esse?
-    //       Nesciunt repellendus, tenetur exercitationem autem sint reiciendis
-    //       porro nihil temporibus animi provident? Enim similique odit cumque
-    //     </p>
-
-    //     <div className="mt-8">
-    //       <button className="btn btn-xs bg-blue-400 rounded-2xl">
-    //         LEARN MORE
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   {/*========= picture section ========= */}
-    //   <div className="w-full">
-    //     <img src="/src/assets/image/Ecommerce web page (1).gif" alt="" />
-    //   </div>
-    // </section>
-
-    // <div className="hero bg-base-200 ">
-    //   <div className="hero-content text-center">
-    //     <div className="">
-    //       <h1 className="text-5xl font-bold ">About Us</h1>
-    //       <p className="py-6 justify-center">
-    //         Eonbazar Quality Leader Online Shop in Bangladesh. Eonbazar Sister
-    //         Concerns of Eon Group of Industries. Eon group is a fast-growing
-    //         conglomerate in Agri-based industry working to provide inputs to
-    //         farmers (crop & animal) to produce high yield and high-quality farm
-    //         which is produced for consumers. This group is engaged in
-    //         manufacturing, import and distributing all types of agricultural
-    //         inputs primarily for the nation-wide local market and also for the
-    //         global market. Our group is working with the vision to be a
-    //         contributor to “Food Security and Safety” in Bangladesh.
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
-
     <section className="">
       <div className="text-center mt-10">
         <h3 className="text-3xl font-bold ">About Us</h3>
