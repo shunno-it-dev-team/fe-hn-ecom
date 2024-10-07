@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Product 1",
-      price: 2900.99,
-      quantity: 2,
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: 1900.99,
-      quantity: 1,
-      image: "https://via.placeholder.com/150",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        const initialCartItems = data.slice(0, 2).map((product) => ({
+          id: product.id,
+          name: product.title,
+          price: product.price,
+          quantity: Math.floor(Math.random() * 3) + 1,
+          image: product.image,
+        }));
+        setCartItems(initialCartItems);
+        setLoading(false);
+      });
+  }, []);
 
   // Calculate total
   const total = cartItems.reduce(
@@ -35,8 +37,10 @@ const CartPage = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">Shopping Cart</h1>
 
-        {cartItems.length === 0 ? (
-          <p className="text-gray-500">Your cart is empty.</p>
+        {loading ? (
+          <p>Loading products...</p>
+        ) : cartItems.length === 0 ? (
+          <p className="text-primary">Your cart is empty.</p>
         ) : (
           <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
             {/* Cart Items */}
@@ -44,7 +48,7 @@ const CartPage = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="card card-side shadow-md bg-base-100 p-4 flex items-center space-x-4"
+                  className="card card-side shadow-md bg-primary p-4 flex items-center space-x-4"
                 >
                   <img
                     src={item.image}
@@ -52,8 +56,10 @@ const CartPage = () => {
                     className="w-24 h-24 rounded-lg object-cover"
                   />
                   <div className="flex-1">
-                    <h2 className="text-lg font-bold">{item.name}</h2>
-                    <p className="text-gray-500">
+                    <h2 className="text-lg font-bold text-secondary">
+                      {item.name}
+                    </h2>
+                    <p className="text-primary">
                       {item.price} x {item.quantity} &#2547;
                     </p>
                   </div>
@@ -72,7 +78,7 @@ const CartPage = () => {
             {/* Cart Summary */}
             <div className="card shadow-md bg-base-100 p-4">
               <h2 className="text-xl font-bold mb-2">Cart Summary</h2>
-              <p className="text-gray-700">
+              <p className="text-primary">
                 Subtotal: &#2547;{total.toFixed(2)}
               </p>
 

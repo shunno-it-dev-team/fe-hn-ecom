@@ -14,7 +14,7 @@ const ContactUsPage = () => {
           <input
             type="text"
             placeholder="Your Name"
-            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            className="input input-bordered rounded-md focus:border-primary "
             required
           />
         </div>
@@ -28,7 +28,7 @@ const ContactUsPage = () => {
           <input
             type="email"
             placeholder="Your Email"
-            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            className="input input-bordered rounded-md focus:border-primary "
             required
           />
         </div>
@@ -42,7 +42,7 @@ const ContactUsPage = () => {
           <input
             type="text"
             placeholder="Subject"
-            className="input input-bordered rounded-md focus:border-primary focus:text-secondary"
+            className="input input-bordered rounded-md focus:border-primary "
             required
           />
         </div>
@@ -54,7 +54,7 @@ const ContactUsPage = () => {
             </span>
           </label>
           <textarea
-            className="textarea textarea-bordered rounded-md focus:border-primary focus:text-secondary h-24"
+            className="textarea textarea-bordered rounded-md focus:border-primary  h-24"
             placeholder="Your message"
             required
           ></textarea>
