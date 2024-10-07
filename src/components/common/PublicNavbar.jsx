@@ -48,7 +48,7 @@ const PublicNavbar = ({ theme, user }) => {
       <div className="navbar-center ">
         <button className="btn btn-ghost text-xl hover:bg-transparent">
           <img
-            src="https://eonbazar.com/images/Eon-Bazar_Logo-final.png"
+            src="/src/assets/logo/logo-520e4690.png"
             alt=""
             className="w-auto h-6"
           />
