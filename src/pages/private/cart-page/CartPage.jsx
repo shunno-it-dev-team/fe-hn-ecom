@@ -21,13 +21,13 @@ const CartPage = () => {
       });
   }, []);
 
-  // Calculate total
+  // ============ Calculate total ============
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
-  // Handle remove item
+  //============ Handle remove item ============
   const removeItem = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
@@ -43,12 +43,12 @@ const CartPage = () => {
           <p className="text-primary">Your cart is empty.</p>
         ) : (
           <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
-            {/* Cart Items */}
+            {/*============ Cart Items ============ */}
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="card card-side shadow-md bg-primary p-4 flex items-center space-x-4"
+                  className="card card-side shadow-md bg-base-100 p-4 flex items-center space-x-4"
                 >
                   <img
                     src={item.image}
@@ -75,7 +75,7 @@ const CartPage = () => {
               ))}
             </div>
 
-            {/* Cart Summary */}
+            {/*============ Cart Summary ============ */}
             <div className="card shadow-md bg-base-100 p-4">
               <h2 className="text-xl font-bold mb-2">Cart Summary</h2>
               <p className="text-primary">
