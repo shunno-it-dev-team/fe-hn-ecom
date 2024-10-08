@@ -7,8 +7,8 @@ import {
 // project import
 import { successAndErrorHandler } from "./response-handler";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { apiService } from "./api/services/apiService";
 import { reducers } from "./reducers";
+import { apiService } from "./api/apiService";
 
 //====|| REDUX TOOLKIT - MAIN STORE ||==== //
 const store = configureStore({

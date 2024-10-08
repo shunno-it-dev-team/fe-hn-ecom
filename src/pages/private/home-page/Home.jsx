@@ -1,13 +1,35 @@
-import CustomCard from "../../../components/common/CustomCard";
 import Banner from "../../../components/page/home/Banner";
 import Container from "../../../components/common/Container";
+import { useGetProductQuery } from "../../../redux/api/services/product.service";
+import Products from "./sub-components/Products";
+import CategoryVerticalBar from "./sub-components/CategoryVerticalBar";
 
 const Home = () => {
+  const {
+    data: products,
+    categories,
+    isLoading,
+  } = useGetProductQuery(undefined, {
+    selectFromResult: ({ data, isSuccess, ...rest }) => {
+      if (isSuccess) {
+        const categories = data.map((item) => ({
+          category: item.category,
+          id: item.id,
+        }));
+
+        return { data, categories, isSuccess, ...rest };
+    }
+      return { data, categories: [], isSuccess, ...rest };
+    },
+  });
+
   return (
     <section className="flex flex-col gap-24">
       <Banner />
+
       <Container>
-        <CustomCard />
+        <CategoryVerticalBar categories={categories} isLoading={isLoading} />
+        <Products products={products} isLoading={isLoading} />
       </Container>
     </section>
   );
