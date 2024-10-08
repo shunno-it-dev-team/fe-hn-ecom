@@ -9,7 +9,7 @@ const CartPage = () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        const initialCartItems = data.slice(0, 2).map((product) => ({
+        const initialCartItems = data.slice(0, 5).map((product) => ({
           id: product.id,
           name: product.title,
           price: product.price,
