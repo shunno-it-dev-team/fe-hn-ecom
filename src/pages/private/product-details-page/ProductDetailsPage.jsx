@@ -15,6 +15,10 @@ const ProductDetailsPage = () => {
       .catch((err) => console.error("Failed to fetch product:", err));
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
