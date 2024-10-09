@@ -53,6 +53,7 @@ const Banner = () => {
       next: "#slide1",
     },
   ];
+
   return (
     <Swiper
       spaceBetween={30}

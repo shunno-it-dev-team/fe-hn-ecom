@@ -8,6 +8,7 @@ import ProductDetailsPage from "../pages/private/product-details-page/ProductDet
 import ContactUsPage from "../pages/private/contact-us-page/ContactUsPage";
 import AboutPage from "../pages/private/about-page/AboutPage";
 import SearchingPage from "../pages/private/searching-page/SearchingPage";
+import ProductsByCategory from "../pages/public/product/ProductsByCategory";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/cartPage",
         element: <CartPage />,
+      },
+      {
+        path: "/product/category/:category",
+        element: <ProductsByCategory />,
       },
       {
         path: "/product/:id",

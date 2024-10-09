@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import Rating from "react-rating";
+import FaIconByKeyName from "../icons/FaIconByKeyName";
+
 const CustomCard = ({ product }) => {
+  console.log("product.rating.rate", product.rating.rate);
   return (
     <div className="card card-compact p-3 bg-base-100 hover:outline hover:shadow-none outline-1 outline-primary/40 text-center">
       <figure className="relative bg-white">
@@ -22,7 +26,7 @@ const CustomCard = ({ product }) => {
       </figure>
 
       <div className="card-body !p-0 justify-between items-start">
-        <div className="text-start">
+        <div className="text-start flex flex-col gap-1">
           <h5 className="font-bold text-start">
             {product.title.length > 40
               ? product.title.slice(0, 40) + "..."
@@ -37,18 +41,16 @@ const CustomCard = ({ product }) => {
             </span>
           </div>
 
-          <div className="rating rating-lg rating-half justify-center">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <input
-                key={index}
-                type="radio"
-                name={`rating-${index}`}
-                disabled
-                className={`mask mask-star-2 bg-orange-400 ${
-                  index + 1 <= product.rating ? "checked" : ""
-                }`}
-              />
-            ))}
+          <div className="text-warning ">
+            <Rating
+              initialRating={product.rating.rate}
+              readonly
+              emptySymbol={<FaIconByKeyName iconName="FaRegStar" />}
+              fullSymbol={<FaIconByKeyName iconName="FaStar" />}
+            />
+            <span className="text-sm text-secondary ml-1">
+              ({product.rating.count})
+            </span>
           </div>
         </div>
 
