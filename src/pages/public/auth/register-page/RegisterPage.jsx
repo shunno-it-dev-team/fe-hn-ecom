@@ -8,7 +8,7 @@ const RegisterPage = () => {
               <span className="label-text">Name</span>
             </label>
             <input
-              type="email"
+              type="name"
               placeholder="Name"
               className="input input-bordered w-full"
               required
