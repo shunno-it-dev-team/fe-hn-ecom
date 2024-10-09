@@ -8,6 +8,7 @@ import ProductDetailsPage from "../pages/private/product-details-page/ProductDet
 import ContactUsPage from "../pages/private/contact-us-page/ContactUsPage";
 import AboutPage from "../pages/private/about-page/AboutPage";
 import SearchingPage from "../pages/private/searching-page/SearchingPage";
+import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/searchingPage",
         element: <SearchingPage />,
+      },
+      {
+        path: "/checkOut",
+        element: <CheckOutPage/>                           ,
       },
     ],
   },
