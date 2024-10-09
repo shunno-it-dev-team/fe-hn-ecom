@@ -10,7 +10,7 @@ export default {
         light: {
           // eslint-disable-next-line no-undef
           ...require("daisyui/src/theming/themes")["light"],
-          primary: "#fa9d32",
+          primary: "Brown",
           secondary: "teal",
           "primary-content": "#fff",
           "secondary-content": "#fff",
@@ -21,7 +21,7 @@ export default {
         dark: {
           // eslint-disable-next-line no-undef
           ...require("daisyui/src/theming/themes")["dark"],
-          primary: "#fa9d32",
+          primary: "Brown",
           secondary: "teal",
           "base-100": "#111827",
           "base-200": "#1F2937",

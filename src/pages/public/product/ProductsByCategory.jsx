@@ -24,7 +24,10 @@ const ProductsByCategory = () => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold  pt-10 mb-5">Products in {category}</h1>
+      <h1 className="text-2xl text-secondary relative overflow-hidden font-semibold bg-base-100 py-3 px-5 rounded-b-xl ">
+        Products in {category}
+        <span className="absolute h-full w-2  bg-secondary top-0 left-0"></span>
+      </h1>
 
       <CustomDrawer
         {...{

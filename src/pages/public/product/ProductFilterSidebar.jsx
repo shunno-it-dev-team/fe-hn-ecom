@@ -1,4 +1,9 @@
+import { useForm } from "react-hook-form";
+import FormInput from "../../../components/common/form/FormInput";
+
 const ProductFilterSidebar = () => {
+  // const {} = useForm
+
   return (
     <div className="bg-base-100 rounded-xl w-56 overflow-hidden">
       <div className="bg-primary/10 flex justify-between items-center py-2 px-3">
@@ -7,6 +12,7 @@ const ProductFilterSidebar = () => {
         <button className="text-primary ">Reset</button>
       </div>
 
+      {/* <FormInput/> */}
       <div className="p-3">
         <h4 className="text-lg font-semibold">Category</h4>
         <ul className="space-y-2 mt-2">

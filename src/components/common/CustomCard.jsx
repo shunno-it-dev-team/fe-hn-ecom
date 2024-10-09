@@ -26,7 +26,7 @@ const CustomCard = ({ product }) => {
       </figure>
 
       <div className="card-body !p-0 justify-between items-start">
-        <div className="text-start flex flex-col gap-1">
+        <div className="text-start flex flex-col gap-2">
           <h5 className="font-bold text-start">
             {product.title.length > 40
               ? product.title.slice(0, 40) + "..."
