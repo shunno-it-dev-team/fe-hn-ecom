@@ -27,21 +27,22 @@ function ImageMagnifier({ imgUrl }) {
       <img className="magnifier-img" src={imgUrl} alt="Product" />
 
       {showMagnifier && (
-        <div
-          style={{
-            position: "absolute",
-            left: `${cursorPosition.x - 100}px`,
-            top: `${cursorPosition.y - 100}px`,
-            pointerEvents: "none",
-            borderRadius: "50%",
-            width: "200px",
-            height: "200px",
-            overflow: "hidden",
-            border: "2px solid #000",
-            boxShadow: "0 0 8px rgba(0, 0, 0, 0.5)",
-            zIndex: 10,
-          }}
-        >
+           <div
+           style={{
+             position: "absolute",
+             left: `${cursorPosition.x - 100}px`,
+             top: `${cursorPosition.y - 100}px`,
+             width: "200px",
+             height: "200px",
+             overflow: "hidden",
+             borderRadius: "50%",
+             border: "2px solid #000",
+             boxShadow: "0 0 8px rgba(0, 0, 0, 0.5)",
+             zIndex: 10,
+             pointerEvents: "auto", 
+             cursor: "default",  
+           }}
+         >
           <div
             className="magnifier-image"
             style={{
