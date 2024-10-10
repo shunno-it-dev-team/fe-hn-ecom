@@ -10,6 +10,8 @@ import AboutPage from "../pages/private/about-page/AboutPage";
 import SearchingPage from "../pages/private/searching-page/SearchingPage";
 import ProductsByCategory from "../pages/public/product/ProductsByCategory";
 import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
+import ProfilePage from "./../pages/private/profile-page/ProfilePage";
+import ErrorPage from "../pages/private/error-page/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +21,7 @@ export const router = createBrowserRouter([
         <PublicLayout />
       </App>
     ),
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -55,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "/checkOut",
         element: <CheckOutPage />,
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />,
       },
     ],
   },

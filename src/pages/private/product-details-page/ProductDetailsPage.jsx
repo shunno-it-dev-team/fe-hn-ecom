@@ -74,7 +74,9 @@ const ProductDetailsPage = () => {
                 />
               </div>
             </div>
-            <div className="badge badge-accent badge-outline">Instock</div>
+            <div className="badge badge-accent badge-outline rounded-none ">
+              Instock
+            </div>
 
             <div className="form-control">
               <label className="label">
