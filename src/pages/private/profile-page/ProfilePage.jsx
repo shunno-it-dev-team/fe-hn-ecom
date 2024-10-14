@@ -7,7 +7,7 @@ const ProfilePage = () => {
           <div className="text-lg font-semibold mb-4">My Account</div>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-primary">
+              <a href="/checkOut" className="text-primary">
                 Orders
               </a>
             </li>
