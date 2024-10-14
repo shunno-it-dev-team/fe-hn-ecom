@@ -146,7 +146,7 @@ const CheckOutPage = () => {
                 </div>
               </div>
 
-              <button className="w-full btn btn-outline text-primary border-primary hover:bg-primary hover:text-base-100 mt-4 shadow-lg">
+              <button className="btn btn-primary w-full mt-6 hover:btn-secondary transition-all shadow-lg">
                 Add New Address
               </button>
             </div>

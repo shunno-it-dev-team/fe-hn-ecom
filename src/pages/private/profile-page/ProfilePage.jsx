@@ -13,7 +13,7 @@ const ProfilePage = () => {
             </li>
             <li>
               <a href="#" className="text-primary">
-                Hisab Nikash Wallet{" "}
+                Hisab Nikash Wallet
                 <span className="badge badge-primary">New</span>
               </a>
             </li>
@@ -72,7 +72,7 @@ const ProfilePage = () => {
                 <input
                   type="text"
                   className="input input-bordered w-full"
-                  placeholder="Mominul islam"
+                  placeholder="Mominul Islam"
                 />
               </div>
               <div>
@@ -109,9 +109,6 @@ const ProfilePage = () => {
                 className="input input-bordered w-full"
                 placeholder="xyz@xyz.com"
               />
-              <a href="#" className="text-primary mt-2 block">
-                Change
-              </a>
             </div>
 
             {/* <!-- Password --> */}
@@ -124,9 +121,6 @@ const ProfilePage = () => {
                 className="input input-bordered w-full"
                 placeholder="********"
               />
-              <a href="#" className="text-primary mt-2 block">
-                Change
-              </a>
             </div>
 
             {/* <!-- Date of Birth --> */}
@@ -148,7 +142,7 @@ const ProfilePage = () => {
                     type="radio"
                     name="gender"
                     className="radio radio-primary mr-2"
-                  />{" "}
+                  />
                   Female
                 </label>
                 <label className="flex items-center">
@@ -157,7 +151,7 @@ const ProfilePage = () => {
                     name="gender"
                     className="radio radio-primary mr-2"
                     checked
-                  />{" "}
+                  />
                   Male
                 </label>
               </div>
