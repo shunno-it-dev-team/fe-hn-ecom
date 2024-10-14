@@ -2,7 +2,55 @@ import { useForm } from "react-hook-form";
 import FormInput from "../../../components/common/form/FormInput";
 
 const ProductFilterSidebar = () => {
-  // const {} = useForm
+  const { control } = useForm();
+
+  const formData = [
+    {
+      label: "Category",
+      name: "category",
+      type: "multiple-checkbox",
+      options: [
+        {
+          value: "1",
+          label: "Category 1",
+        },
+        {
+          value: "2",
+          label: "Category 2",
+        },
+        {
+          value: "3",
+          label: "Category 3",
+        },
+      ],
+    },
+    {
+      label: "Sub Category",
+      name: "sub_category",
+      type: "text",
+      options: [
+        {
+          value: "1",
+          label: "Sub Category 1",
+        },
+        {
+          value: "2",
+          label: "Sub Category 2",
+        },
+        {
+          value: "3",
+          label: "Sub Category 3",
+        },
+      ],
+    },
+    {
+      label: "Price",
+      name: "price",
+      type: "two-way-range",
+      min: 0,
+      max: 100,
+    },
+  ];
 
   return (
     <div className="bg-base-100 rounded-xl w-56 overflow-hidden">
@@ -12,103 +60,14 @@ const ProductFilterSidebar = () => {
         <button className="text-primary ">Reset</button>
       </div>
 
-      {/* <FormInput/> */}
-      <div className="p-3">
-        <h4 className="text-lg font-semibold">Category</h4>
-        <ul className="space-y-2 mt-2">
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-        </ul>
-
-        <h4 className="text-lg font-semibold mt-4">Price</h4>
-        <div className="mt-2">
-          <input
-            className="range range-xs range-primary"
-            type="range"
-            id="price"
-            name="price"
-            min="0"
-            max="100"
-          />
-
-          <div className="flex justify-between">
-            <span>$0</span>
-            <span>$100</span>
-          </div>
-        </div>
-        <h4 className="text-lg font-semibold">Category</h4>
-        <ul className="space-y-2 mt-2">
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-          <li>
-            <div className="form-control">
-              <label className="label cursor-pointer">
-                <span className="label-text">Sub Category</span>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox checkbox-sm checkbox-primary"
-                />
-              </label>
-            </div>
-          </li>
-        </ul>
+      <div className="grid grid-cols-2 gap-1 p-3">
+        <FormInput
+          {...{
+            control,
+            formData,
+            size: "sm",
+          }}
+        />
       </div>
     </div>
   );
