@@ -74,7 +74,29 @@ const ProductDetailsPage = () => {
                 />
               </div>
             </div>
-            <div className="badge badge-accent badge-outline">Instock</div>
+            <div className="badge badge-accent badge-outline rounded-none ">
+              Instock
+            </div>
+
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-primary">Color</span>
+              </label>
+              <div className="flex gap-4">
+                <label className="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="radio_size"
+                    className="radio hidden"
+                    id="radioSize1"
+                  />
+                  <div
+                    className="w-2 h-2 rounded-full border-2 border-primary p-2 mt-1"
+                    style={{ backgroundColor: "#ffcc00" }}
+                  ></div>
+                </label>
+              </div>
+            </div>
           </div>
           {/*================= PRICE AND CATEGORY ================= */}
           <div className="mb-2">

@@ -213,7 +213,7 @@ const PublicNavbar = ({ theme, user }) => {
               className="menu menu-sm dropdown-content rounded-box z-10 bg-primary mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a className="justify-between">
+                <a href="/" className="justify-between">
                   Profile
                   <span className="badge">New</span>
                 </a>
