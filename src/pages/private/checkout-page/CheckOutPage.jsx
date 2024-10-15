@@ -85,7 +85,7 @@ const CheckOutPage = () => {
                   >
                     <option selected>Rajshahi</option>
                     <option value="LA">Naogaon</option>
-                    <option value="CH">Bogura</option>
+                    <option value="CH">Bogra</option>
                     <option value="MI">Dhaka</option>
                     <option value="SF">Khulna</option>
                   </select>
@@ -100,7 +100,7 @@ const CheckOutPage = () => {
                     </span>
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Phone Number"
                     className="input input-bordered w-full"
                     required
@@ -138,7 +138,7 @@ const CheckOutPage = () => {
                     <span className="label-text text-primary">Card Number</span>
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Card Number"
                     className="input input-bordered w-full"
                     required

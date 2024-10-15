@@ -2,7 +2,7 @@ const ProfilePage = () => {
   return (
     <>
       <div className="flex">
-        {/* <!-- Sidebar  --> */}
+    {/* ============================= SIDEBAR =============================  */}
         <div className=" w-full lg:w-2/6 bg-base-200 p-6">
           <div className="text-lg font-semibold mb-4">My Account</div>
           <ul className="space-y-2">
@@ -56,14 +56,14 @@ const ProfilePage = () => {
           </div>
         </div>
 
-        {/* <!-- Personal Information Form  --> */}
+        {/* ============================= PERSONAL INFORMATION FORM  ============================= */}
         <div className=" w-full lg:w-5/6 bg-base-100 p-6">
           <div className="text-2xl font-semibold mb-4">
             Personal Information
           </div>
 
           <form>
-            {/* <!-- First Name and Last Name --> */}
+            {/* ============================= FIRST NAME AND LAST NAME ============================= */}
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-secondary mb-2">
@@ -87,7 +87,6 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            {/* <!-- Screen Name --> */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-secondary mb-2">
                 Nick Name
@@ -119,7 +118,7 @@ const ProfilePage = () => {
               <input
                 type="password"
                 className="input input-bordered w-full"
-                placeholder="********"
+                placeholder="*********"
               />
             </div>
 
@@ -131,7 +130,7 @@ const ProfilePage = () => {
               <input type="date" className="input input-bordered w-full" />
             </div>
 
-            {/* <!-- Gender --> */}
+            {/*-- Gender  */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-secondary mb-2">
                 Gender
