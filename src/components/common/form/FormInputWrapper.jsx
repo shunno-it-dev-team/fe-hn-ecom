@@ -14,11 +14,11 @@ const FormInputWrapper = ({
       className={cn(
         "form-control w-full",
         {
-          [`col-span-${colSpans.xs}`]: colSpans.xs,
-          [`sm:col-span-${colSpans.sm}`]: colSpans.sm,
-          [`md:col-span-${colSpans.md}`]: colSpans.md,
-          [`lg:col-span-${colSpans.lg}`]: colSpans.lg,
-          [`xl:col-span-${colSpans.xl}`]: colSpans.xl,
+          [`col-span-${colSpans?.xs}`]: colSpans?.xs,
+          [`sm:col-span-${colSpans?.sm}`]: colSpans?.sm,
+          [`md:col-span-${colSpans?.md}`]: colSpans?.md,
+          [`lg:col-span-${colSpans?.lg}`]: colSpans?.lg,
+          [`xl:col-span-${colSpans?.xl}`]: colSpans?.xl,
         },
         className
       )}
@@ -32,8 +32,8 @@ const FormInputWrapper = ({
       {children}
 
       {errorMessage && (
-        <div className="label text-error italic">
-          <span className="label-text-alt">{errorMessage}</span>
+        <div className="label  italic">
+          <span className="label-text-alt text-error">{errorMessage}</span>
         </div>
       )}
     </label>

@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useGetProductQuery } from "../../../redux/api/services/product.service";
 import Products from "../../private/home-page/sub-components/Products";
-import CustomDrawer from "../../../components/common/CustomDrawer";
 import { useEffect } from "react";
-import ProductFilterSidebar from "./ProductFilterSidebar";
+
+// import CustomDrawer from "../../../components/common/CustomDrawer";
+// import ProductFilterSidebar from "./ProductFilterSidebar";
 
 const ProductsByCategory = () => {
   const { category } = useParams();
@@ -29,7 +30,7 @@ const ProductsByCategory = () => {
         <span className="absolute h-full w-2 bg-primary/20 top-0 left-0"></span>
       </h1>
 
-      <CustomDrawer
+      {/* <CustomDrawer
         {...{
           title: `Products in ${category}`,
           description: `Showing all products in ${category} category`,
@@ -38,7 +39,8 @@ const ProductsByCategory = () => {
         }}
       >
         <Products products={products} isLoading={isLoading} />
-      </CustomDrawer>
+      </CustomDrawer> */}
+      <Products products={products} isLoading={isLoading} />
     </div>
   );
 };

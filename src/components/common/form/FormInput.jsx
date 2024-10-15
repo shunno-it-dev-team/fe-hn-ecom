@@ -8,12 +8,7 @@ import { cn } from "../../../helpers/dynamicClassName";
 // import ImageInput from "./ImageInput";
 // import RichEditor from "./RichEditor";
 
-const FormInput = ({
-  formData,
-  control,
-  colSpans = { xs: 12, sm: 1, md: 2, lg: 3, xl: 4 },
-  size,
-}) => {
+const FormInput = ({ formData, control, size }) => {
   const commonInputTypes = ["text", "email", "number", "date", "url"];
 
   return formData.reduce((acc, input, index) => {
@@ -32,7 +27,7 @@ const FormInput = ({
               {...{
                 label: input.label,
                 errorMessage: fieldState?.error?.message,
-                colSpans,
+                colSpans: input.colSpans,
                 className: input.className,
                 required: input.required,
               }}
@@ -500,14 +495,14 @@ const FormInput = ({
               {...{
                 label: input.label,
                 errorMessage: fieldState?.error?.message,
-                colSpans,
+                colSpans: input.colSpans,
                 className: input.className,
               }}
             >
               <textarea
                 placeholder={input.placeholder}
                 className={cn(
-                  "input input-bordered w-full",
+                  "textarea textarea-bordered",
                   input.inputClassName,
                   {
                     [`input-${inputSize}`]: inputSize,
@@ -530,7 +525,7 @@ const FormInput = ({
               {...{
                 label: input.label,
                 errorMessage: fieldState?.error?.message,
-                colSpans,
+                colSpans: input.colSpans,
                 className: input.className,
               }}
             >
@@ -563,7 +558,7 @@ const FormInput = ({
               {...{
                 label: input.label,
                 errorMessage: fieldState?.error?.message,
-                colSpans,
+                colSpans: input.colSpans,
                 className: input.className,
               }}
             >
@@ -605,11 +600,11 @@ const FormInput = ({
               className={cn(
                 "form-control w-full",
                 {
-                  [`col-span-${colSpans.xs}`]: colSpans.xs,
-                  [`sm:col-span-${colSpans.sm}`]: colSpans.sm,
-                  [`md:col-span-${colSpans.md}`]: colSpans.md,
-                  [`lg:col-span-${colSpans.lg}`]: colSpans.lg,
-                  [`xl:col-span-${colSpans.xl}`]: colSpans.xl,
+                  [`col-span-${input.colSpans?.xs}`]: input.colSpans?.xs,
+                  [`sm:col-span-${input.colSpans?.sm}`]: input.colSpans?.sm,
+                  [`md:col-span-${input.colSpans?.md}`]: input.colSpans?.md,
+                  [`lg:col-span-${input.colSpans?.lg}`]: input.colSpans?.lg,
+                  [`xl:col-span-${input.colSpans?.xl}`]: input.colSpans?.xl,
                 },
                 input.className
               )}
@@ -671,11 +666,11 @@ const FormInput = ({
               className={cn(
                 "form-control w-full",
                 {
-                  [`col-span-${colSpans.xs}`]: colSpans.xs,
-                  [`sm:col-span-${colSpans.sm}`]: colSpans.sm,
-                  [`md:col-span-${colSpans.md}`]: colSpans.md,
-                  [`lg:col-span-${colSpans.lg}`]: colSpans.lg,
-                  [`xl:col-span-${colSpans.xl}`]: colSpans.xl,
+                  [`col-span-${input.colSpans?.xs}`]: input.colSpans?.xs,
+                  [`sm:col-span-${input.colSpans?.sm}`]: input.colSpans?.sm,
+                  [`md:col-span-${input.colSpans?.md}`]: input.colSpans?.md,
+                  [`lg:col-span-${input.colSpans?.lg}`]: input.colSpans?.lg,
+                  [`xl:col-span-${input.colSpans?.xl}`]: input.colSpans?.xl,
                 },
                 input.className
               )}
