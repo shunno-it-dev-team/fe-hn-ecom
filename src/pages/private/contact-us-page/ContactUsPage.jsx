@@ -1,108 +1,88 @@
+import { useForm } from "react-hook-form";
+import FormInput from "../../../components/common/form/FormInput";
+import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
+import {
+  CONTACT_DETAILS_DEFAULT_VALUES,
+  contactDetails,
+  contactUsFormData,
+  contactUsValidationScheme,
+} from "./contactUs.helper";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useCreateContactMutation } from "../../../redux/api/services/contact.service";
+
 const ContactUsPage = () => {
+  const [createContact, { isLoading }] = useCreateContactMutation();
+
+  const { control, handleSubmit } = useForm({
+    resolver: yupResolver(contactUsValidationScheme()),
+    mode: "all",
+    defaultValues: CONTACT_DETAILS_DEFAULT_VALUES,
+  });
+
+  const formSubmit = (data) => {
+    console.log("data :>> ", data);
+
+    createContact(data);
+  };
+
   return (
-    <div className="flex flex-col lg:flex-row lg:card-side gap-10 p-6">
-      {/* ========== form section ========== */}
-      <form className="card-body shadow-md rounded-md p-6 h-screen w-full lg:w-1/4">
-        <h3 className="text-3xl font-bold mb-6 text-primary">Write us</h3>
+    <div className="flex min-h-screen max-w-screen-lg justify-between flex-col gap-5 lg:flex-row mx-auto items-center">
+      <div className="text-center lg:text-left relative z-10">
+        <h2 className="text-5xl font-bold mb-5 text-primary static">
+          Contact Us
+        </h2>
 
-        <div className="form-control mb-4">
-          <label className="label">
-            <span className="label-text  text-lg font-semibold text-primary">
-              Name
-            </span>
-          </label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="input input-bordered rounded-md focus:border-primary "
-            required
-          />
+        <div className="absolute h-2 w-2/3 rounded-lg bg-primary/40 top-10 blur-sm left-2 -z-10 mb-10"></div>
+
+        {/* CONTACT DETAILS */}
+        <div className="flex flex-col gap-2">
+          {contactDetails.map((contactDetail, index) => {
+            if (contactDetail.type === "text") {
+              return (
+                <div className="flex items-start gap-2" key={index}>
+                  <FaIconByKeyName iconName={contactDetail.icon} />
+                  <p
+                    className="-mt-1"
+                    dangerouslySetInnerHTML={{ __html: contactDetail.details }}
+                  ></p>
+                </div>
+              );
+            }
+            if (contactDetail.type === "link") {
+              return (
+                <a
+                  href={contactDetail.href}
+                  className="flex items-center gap-2"
+                  key={index}
+                >
+                  <FaIconByKeyName iconName={contactDetail.icon} />
+                  {contactDetail.details}
+                </a>
+              );
+            }
+          })}
         </div>
+      </div>
 
-        <div className="form-control mb-4">
-          <label className="label">
-            <span className="label-text text-lg font-semibold text-primary">
-              Email
-            </span>
-          </label>
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="input input-bordered rounded-md focus:border-primary "
-            required
-          />
-        </div>
+      <div className="card bg-base-100 w-full max-w-lg shrink-0">
+        {/* CONTACT FORM */}
+        <form onSubmit={handleSubmit(formSubmit)} className="card-body">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <FormInput
+              {...{
+                formData: contactUsFormData(),
+                control,
+              }}
+            />
+          </div>
 
-        <div className="form-control mb-4">
-          <label className="label">
-            <span className="label-text text-lg font-semibold text-primary">
-              Subject
-            </span>
-          </label>
-          <input
-            type="text"
-            placeholder="Subject"
-            className="input input-bordered rounded-md focus:border-primary "
-            required
-          />
-        </div>
-
-        <div className="form-control mb-6">
-          <label className="label">
-            <span className="label-text text-lg font-semibold text-primary">
-              Message
-            </span>
-          </label>
-          <textarea
-            className="textarea textarea-bordered rounded-md focus:border-primary  h-24"
-            placeholder="Your message"
-            required
-          ></textarea>
-        </div>
-
-        <div className="form-control">
-          <button className="btn btn-warning w-full py-3 text-lg font-semibold rounded-md">
-            Send Message
+          <button className="btn btn-block btn-primary" disabled={isLoading}>
+            Send
+            {isLoading && (
+              <span className="loading loading-bars loading-xs"></span>
+            )}
           </button>
-        </div>
-      </form>
-      {/* ========== contact section ========== */}
-      <div className="card-body items-start mt-28 rounded-md p-6 w-full lg:w-1/2">
-        <div className="mb-4">
-          <h1 className="text-4xl font-bold text-primary text-center lg:text-left">
-            Contact Information
-          </h1>
-          <p className=" text-primary text-center lg:text-left">
-            We are open for any suggestion or just to have a chat.
-          </p>
-        </div>
-        <div className="mb-4">
-          <p className="font-bold text-lg text-primary">Address:</p>
-          <p className="text-primary">
-            রাজশাহী অফিস ঠিকানাঃ ২১৬/১, পশ্চিম তালাইমারি, কাজলা, বোয়ালিয়া,
-            রাজশাহী-৬২০৪
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <p className="font-bold text-lg text-primary">Phone:</p>
-          <p className="text-primary">০১৮৯৬৪৮৮৪৮০</p>
-        </div>
-
-        <div className="mb-4">
-          <p className="font-bold text-lg text-primary">Email:</p>
-          <p className="text-primary">hisabnikash@gmail.com</p>
-        </div>
-
-        <div className="mb-4">
-          <p className="font-bold text-lg text-primary">Website:</p>
-          <a
-            href="https://hisabnikashbd.com/"
-            className="text-primary hover:underline"
-          >
-            https://hisabnikashbd.com/
-          </a>
-        </div>
+        </form>
       </div>
     </div>
   );

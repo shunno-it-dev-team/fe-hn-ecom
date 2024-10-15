@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useGetProductQuery } from "../../../redux/api/services/product.service";
 import Products from "../../private/home-page/sub-components/Products";
-import CustomDrawer from "../../../components/common/CustomDrawer";
 import { useEffect } from "react";
-import ProductFilterSidebar from "./ProductFilterSidebar";
+
+// import CustomDrawer from "../../../components/common/CustomDrawer";
+// import ProductFilterSidebar from "./ProductFilterSidebar";
 
 const ProductsByCategory = () => {
   const { category } = useParams();
@@ -24,12 +25,12 @@ const ProductsByCategory = () => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-2xl text-secondary relative overflow-hidden font-semibold bg-base-100 py-3 px-5 rounded-b-xl ">
+      <h1 className="text-2xl text-primary relative overflow-hidden font-semibold bg-base-100 mb-4 py-3 px-5 rounded-b-xl ">
         Products in {category}
-        <span className="absolute h-full w-2  bg-secondary top-0 left-0"></span>
+        <span className="absolute h-full w-2 bg-primary/20 top-0 left-0"></span>
       </h1>
 
-      <CustomDrawer
+      {/* <CustomDrawer
         {...{
           title: `Products in ${category}`,
           description: `Showing all products in ${category} category`,
@@ -38,7 +39,8 @@ const ProductsByCategory = () => {
         }}
       >
         <Products products={products} isLoading={isLoading} />
-      </CustomDrawer>
+      </CustomDrawer> */}
+      <Products products={products} isLoading={isLoading} />
     </div>
   );
 };
