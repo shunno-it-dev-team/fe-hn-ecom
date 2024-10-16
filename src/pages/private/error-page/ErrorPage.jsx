@@ -1,35 +1,34 @@
+import { Link, useNavigate, useRouteError } from "react-router-dom";
+import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
+
 const ErrorPage = () => {
+  const error = useRouteError();
+  const navigate = useNavigate();
+
+  console.error("error", error.stack);
+
   return (
-    <>
-      <div className="bg-base-100 py-12 ">
-        <div className="text-center">
-          <h1 className="mb-4 text-6xl font-semibold text-primary">404</h1>
-          <p className="mb-4 text-lg ">Oops! Looks like you&apos;re lost.</p>
-          <div className="animate-bounce">
-            <svg
-              className="mx-auto h-16 w-16 text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              ></path>
-            </svg>
-          </div>
-          <p className="mt-4 ">
-            Let&apos;s get you back{" "}
-            <a href="/" className="text-blue-500">
-              Home
-            </a>
-            .
-          </p>
-        </div>
+    <div className="py-10 flex flex-col justify-center items-center min-h-screen gap-5 text-center">
+      <div>
+        <h1 className=" text-8xl font-semibold text-error">
+          {error?.status || "404"}
+        </h1>
+        <p>{error?.statusText || "Not Found"}</p>
       </div>
-    </>
+      <p className="text-error">{error?.data || error?.message}</p>
+
+      <div className="join">
+        <button
+          onClick={() => navigate(-1)}
+          className="btn btn-primary btn-outline  btn-sm join-item"
+        >
+          <FaIconByKeyName iconName="FaArrowLeft" /> Back
+        </button>
+        <Link to="/" className="btn btn-primary btn-sm join-item">
+          <FaIconByKeyName iconName="FaHome" /> Home
+        </Link>
+      </div>
+    </div>
   );
 };
 
