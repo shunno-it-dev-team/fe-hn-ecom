@@ -12,6 +12,7 @@ import ProductsByCategory from "../pages/public/product/ProductsByCategory";
 import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
 import ProfilePage from "./../pages/private/profile-page/ProfilePage";
 import ErrorPage from "../pages/private/error-page/ErrorPage";
+import OrderHistory from "../pages/private/order-history/OrderHistory";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "/order",
+        element: <OrderHistory />,
       },
     ],
   },
