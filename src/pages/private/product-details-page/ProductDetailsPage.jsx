@@ -216,6 +216,34 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </div>
+
+      <div className="max-w-7xl mx-auto mt-6 p-6 bg-base-100 rounded-lg">
+        <h5 className="text-2xl  font-bold text-primary">Enter Your Comment</h5>
+        <div className="flex items-start mt-4">
+          <div className="mr-3">
+            <img
+              src="https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_1.jpeg"
+              alt=""
+              className="w-16 h-16 rounded-full border"
+            />
+          </div>
+          <div className="flex-grow">
+            <form>
+              <div className="form-control">
+                <textarea
+                  className="textarea textarea-bordered p-2 w-full"
+                  rows="2"
+                  placeholder="write your review"
+                ></textarea>
+              </div>
+              <div className="mt-3 text-center md:text-right">
+                <button className="btn btn-outline mr-4">CANCEL</button>
+                <button className="btn btn-primary">POST</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
