@@ -1,3 +1,4 @@
+import capitalizeFirstLetter from "../../../helpers/capitalizeFirstLetter";
 import { cn } from "../../../helpers/dynamicClassName";
 import PropTypes from "prop-types";
 
@@ -33,7 +34,9 @@ const FormInputWrapper = ({
 
       {errorMessage && (
         <div className="label  italic">
-          <span className="label-text-alt text-error">{errorMessage}</span>
+          <span className="label-text-alt text-error">
+            {capitalizeFirstLetter(errorMessage)}
+          </span>
         </div>
       )}
     </label>

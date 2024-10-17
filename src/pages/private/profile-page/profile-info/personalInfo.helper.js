@@ -1,16 +1,38 @@
+import * as Yup from "yup";
+
+const PERSONAL_INFO_DEFAULT_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  dob: "",
+  gender: "",
+};
+
+const personalInfoValidationSchema = () => {
+  return Yup.object({
+    firstName: Yup.string().required("First Name is required"),
+    lastName: Yup.string().required("Last Name is required"),
+    email: Yup.string().email().required("Email is required"),
+    password: Yup.string().required("Password is required"),
+    dob: Yup.string().required("Date of Birth is required"),
+    gender: Yup.string().oneOf(["MALE", "FEMALE"]).required(),
+  });
+};
+
 const personalInfoFormData = () => {
   return [
     {
       type: "text",
       name: "firstName",
       label: "First Name",
-      placeholder: "Mominul XXXX",
+      placeholder: "Mr. XXXX",
     },
     {
       type: "text",
       name: "lastName",
       label: "Last Name",
-      placeholder: "XXXX Anik",
+      placeholder: "XXXX",
     },
     {
       type: "email",
@@ -35,10 +57,14 @@ const personalInfoFormData = () => {
       label: "Gender",
       options: [
         { label: "Male", value: "MALE" },
-        { label: "FeMale", value: "FEMALE" },
+        { label: "Female", value: "FEMALE" },
       ],
     },
   ];
 };
 
-export { personalInfoFormData };
+export {
+  personalInfoFormData,
+  PERSONAL_INFO_DEFAULT_VALUES,
+  personalInfoValidationSchema,
+};

@@ -1,10 +1,17 @@
 import { useForm } from "react-hook-form";
 import FormInput from "../../../../components/common/form/FormInput";
-import { personalInfoFormData } from "./personalInfo.helper";
+import {
+  PERSONAL_INFO_DEFAULT_VALUES,
+  personalInfoFormData,
+  personalInfoValidationSchema,
+} from "./personalInfo.helper";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const PersonalInfo = () => {
   const { control, handleSubmit } = useForm({
     mode: "all",
+    defaultValues: PERSONAL_INFO_DEFAULT_VALUES,
+    resolver: yupResolver(personalInfoValidationSchema()),
   });
 
   const formSubmit = (data) => {

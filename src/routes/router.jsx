@@ -13,6 +13,7 @@ import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
 import ProfilePage from "./../pages/private/profile-page/ProfilePage";
 import ErrorPage from "../pages/private/error-page/ErrorPage";
 import PersonalInfo from "../pages/private/profile-page/profile-info/PersonalInfo";
+import AddressBook from "../pages/private/profile-page/address-book/AddressBook";
 import OrderHistory from "../pages/private/order-history/OrderHistory";
 import PaymentHistory from "../pages/private/payment-history/PaymentHistory";
 
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
           {
             path: "payments",
             element: <PaymentHistory />,
+          },
+          {
+            path: "address-book",
+            element: <AddressBook />,
           },
         ],
       },

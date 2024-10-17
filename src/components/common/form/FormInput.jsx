@@ -66,7 +66,13 @@ const FormInput = ({ formData, control, size }) => {
               }}
             >
               <PasswordField
-                inputProps={field}
+                inputProps={{
+                  ...field,
+                  ...{
+                    placeholder: input.placeholder,
+                    disabled: input.disabled,
+                  },
+                }}
                 className={input.inputClassName}
               />
             </FormInputWrapper>
@@ -193,29 +199,30 @@ const FormInput = ({ formData, control, size }) => {
                 className: input.className,
               }}
             >
-              <ul className={cn("space-y-2 mt-2", input.className)}>
+              <div
+                className={cn("flex items-start", input.className, {
+                  [`flex-${input.direction}`]: input.direction,
+                })}
+              >
                 {input?.options?.map((option, i) => (
-                  <li key={i}>
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <span className="label-text">{option.label}</span>
-                        <input
-                          type="radio"
-                          defaultChecked
-                          className={cn(
-                            "radio radio-sm radio-primary",
-                            input.inputClassName,
-                            {
-                              [`radio-${inputSize}`]: inputSize,
-                            }
-                          )}
-                          {...field}
-                        />
-                      </label>
-                    </div>
-                  </li>
+                  <div className="form-control" key={i}>
+                    <label className="label cursor-pointer gap-2">
+                      <span className="label-text">{option.label}</span>
+                      <input
+                        type="radio"
+                        name={`input.name-${index}`}
+                        className={cn("radio", {
+                          [`radio-${inputSize}`]: inputSize,
+                          [`radio-${input.color}`]: input.color,
+                        })}
+                        value={option.value}
+                        onChange={field.onChange}
+                        checked={field.value === option.value}
+                      />
+                    </label>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </FormInputWrapper>
           )}
         />
