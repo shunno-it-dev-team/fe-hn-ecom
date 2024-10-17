@@ -18,6 +18,11 @@ const ProfileSidebar = () => {
       icon: "FaCreditCard",
       link: "/profile/payments",
     },
+    {
+      title: "Order List",
+      icon: "FaBabyCarriage",
+      link: "/profile/order",
+    },
   ];
 
   return (

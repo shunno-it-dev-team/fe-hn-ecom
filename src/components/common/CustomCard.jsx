@@ -5,7 +5,7 @@ import Rating from "react-rating";
 import FaIconByKeyName from "../icons/FaIconByKeyName";
 
 const CustomCard = ({ product }) => {
-  console.log("product.rating.rate", product.rating.rate);
+  // console.log("product.rating.rate", product.rating.rate);
   return (
     <div className="card card-compact p-3 bg-base-100 hover:outline hover:shadow-none outline-1 outline-primary/40 text-center">
       <figure className="relative bg-white">

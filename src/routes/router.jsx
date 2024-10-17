@@ -73,11 +73,11 @@ export const router = createBrowserRouter([
             path: "personal-information",
             element: <PersonalInfo />,
           },
+          {
+            path: "order",
+            element: <OrderHistory />,
+          },
         ],
-      },
-      {
-        path: "/order",
-        element: <OrderHistory />,
       },
     ],
   },
