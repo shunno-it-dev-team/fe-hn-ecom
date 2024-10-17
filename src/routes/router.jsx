@@ -14,6 +14,7 @@ import ProfilePage from "./../pages/private/profile-page/ProfilePage";
 import ErrorPage from "../pages/private/error-page/ErrorPage";
 import PersonalInfo from "../pages/private/profile-page/profile-info/PersonalInfo";
 import OrderHistory from "../pages/private/order-history/OrderHistory";
+import PaymentHistory from "../pages/private/payment-history/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
           {
             path: "order",
             element: <OrderHistory />,
+          },
+          {
+            path: "payments",
+            element: <PaymentHistory />,
           },
         ],
       },
