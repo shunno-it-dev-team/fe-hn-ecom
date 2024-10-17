@@ -12,6 +12,7 @@ import ProductsByCategory from "../pages/public/product/ProductsByCategory";
 import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
 import ProfilePage from "./../pages/private/profile-page/ProfilePage";
 import ErrorPage from "../pages/private/error-page/ErrorPage";
+import PersonalInfo from "../pages/private/profile-page/profile-info/PersonalInfo";
 import OrderHistory from "../pages/private/order-history/OrderHistory";
 
 export const router = createBrowserRouter([
@@ -22,18 +23,22 @@ export const router = createBrowserRouter([
         <PublicLayout />
       </App>
     ),
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <App>
+        <ErrorPage />
+      </App>
+    ),
     children: [
       {
         path: "/",
         element: <Home />,
       },
       {
-        path: "/notificationPage",
+        path: "/notifications-page",
         element: <NotificationPage />,
       },
       {
-        path: "/cartPage",
+        path: "/cart-page",
         element: <CartPage />,
       },
       {
@@ -53,7 +58,7 @@ export const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "/searchingPage",
+        path: "/searching-page",
         element: <SearchingPage />,
       },
       {
@@ -63,6 +68,12 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage />,
+        children: [
+          {
+            path: "personal-information",
+            element: <PersonalInfo />,
+          },
+        ],
       },
       {
         path: "/order",
