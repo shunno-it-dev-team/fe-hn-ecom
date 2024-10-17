@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
+import { cn } from "../../../helpers/dynamicClassName";
 
 const ProfileSidebar = () => {
+  const { pathname } = useLocation();
+
   const profileMenu = [
     {
       title: "Personal Information",
@@ -48,7 +51,13 @@ const ProfileSidebar = () => {
       <ul className="menu bg-base-200 rounded-box w-56">
         {profileMenu.map((item, index) => (
           <li key={index}>
-            <Link to={item.link}>
+            <Link
+              to={item.link}
+              className={cn("relative", {
+                "bg-base-100 overflow-hidden before:absolute before:left-0 before:top-0 before:h-full before:w-[5px] before:bg-primary":
+                  pathname.includes(item.link),
+              })}
+            >
               <FaIconByKeyName iconName={item.icon} />
               {item.title}
             </Link>

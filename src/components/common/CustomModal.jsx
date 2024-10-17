@@ -13,7 +13,7 @@ const CustomModal = ({
     <div>
       {/* Put this part before </body> tag */}
       <input type="checkbox" id={modalId} className="modal-toggle" />
-      <div className="modal" role="dialog">
+      <div className="modal backdrop-blur-md" role="dialog">
         <div className="modal-box text-base-content ">
           <div className="flex justify-between sticky top-0 mb-4  backdrop-blur-md z-50">
             <h3 className="text-lg font-bold">{title}</h3>

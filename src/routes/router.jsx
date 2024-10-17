@@ -13,6 +13,7 @@ import CheckOutPage from "../pages/private/checkout-page/CheckOutPage";
 import ProfilePage from "./../pages/private/profile-page/ProfilePage";
 import ErrorPage from "../pages/private/error-page/ErrorPage";
 import PersonalInfo from "../pages/private/profile-page/profile-info/PersonalInfo";
+import AddressBook from "../pages/private/profile-page/address-book/AddressBook";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
           {
             path: "personal-information",
             element: <PersonalInfo />,
+          },
+          {
+            path: "address-book",
+            element: <AddressBook />,
           },
         ],
       },
