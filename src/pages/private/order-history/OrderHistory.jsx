@@ -40,7 +40,7 @@ const OrderHistory = () => {
               <div>
                 <label
                   htmlFor="order-type"
-                  className="sr-only mb-2 block text-sm font-medium text-neutral/40"
+                  className="sr-only mb-2 block text-sm font-medium text-base-content/40"
                 >
                   Select order type
                 </label>
@@ -61,7 +61,7 @@ const OrderHistory = () => {
               <div>
                 <label
                   htmlFor="duration"
-                  className="sr-only mb-2 block text-sm font-medium text-neutral/40"
+                  className="sr-only mb-2 block text-sm font-medium text-base-content/40"
                 >
                   Select duration
                 </label>
@@ -86,7 +86,7 @@ const OrderHistory = () => {
                 >
                   <div className="w-1/2 sm:w-1/4 lg:w-auto lg:flex-1">
                     <p className="text-base font-bold">Order ID:</p>
-                    <p className="mt-1.5 text-base font-semibold text-neutral/40">
+                    <p className="mt-1.5 text-base font-semibold text-base-content/40">
                       <a href="#" className="hover:underline">
                         {order.id}
                       </a>
@@ -95,14 +95,14 @@ const OrderHistory = () => {
 
                   <div className="w-1/2 sm:w-1/4 lg:w-auto lg:flex-1">
                     <p className="text-base font-bold">Date:</p>
-                    <p className="mt-1.5 text-base font-semibold text-neutral/40">
+                    <p className="mt-1.5 text-base font-semibold text-base-content/40">
                       {order.date}
                     </p>
                   </div>
 
                   <div className="w-1/2 sm:w-1/4 lg:w-auto lg:flex-1">
                     <p className="text-base font-bold">Price:</p>
-                    <p className="mt-1.5 text-base font-semibold text-neutral/40">
+                    <p className="mt-1.5 text-base font-semibold text-base-content/40">
                       {order.price}
                     </p>
                   </div>
@@ -110,10 +110,10 @@ const OrderHistory = () => {
                   <div className="w-1/2 sm:w-1/4 lg:w-auto lg:flex-1">
                     <p className="text-base font-bold">Status:</p>
                     <span
-                      className={`badge px-2.5 py-0.5 text-xs font-medium  rounded-none
+                      className={`badge px-2.5 py-0.5 text-xs font-medium  rounded-none text-base-100
                         ${
                           order.status === "Cancelled"
-                            ? "badge-primary"
+                            ? "badge-error"
                             : "badge-secondary"
                         }`}
                     >

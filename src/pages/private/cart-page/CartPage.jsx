@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -65,10 +66,10 @@ const CartPage = () => {
                   </div>
                   <div>
                     <button
-                      className="btn btn-sm btn-error"
+                      className="btn btn-lg"
                       onClick={() => removeItem(item.id)}
                     >
-                      Remove
+                      <FaIconByKeyName iconName="FaTrash" />
                     </button>
                   </div>
                 </div>

@@ -5,6 +5,7 @@ import { setThemeToRedux } from "../../redux/reducers/globalSlice";
 import CustomModal from "./CustomModal";
 import AuthWrapper from "../../pages/public/auth/AuthWrapper";
 import PropTypes from "prop-types";
+import CartPage from "../../pages/private/cart-page/CartPage";
 
 const PublicNavbar = ({ theme, user }) => {
   return (
@@ -142,12 +143,8 @@ const PublicNavbar = ({ theme, user }) => {
             className="card card-compact dropdown-content bg-primary z-[1] mt-3 w-52 shadow"
           >
             <div className="card-body">
-              <span className="text-lg font-bold">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
               <div className="card-actions">
-                <button className="btn btn-secondary btn-block">
-                  View cart
-                </button>
+                <CartPage />
               </div>
             </div>
           </div>

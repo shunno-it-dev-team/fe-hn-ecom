@@ -216,7 +216,7 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </div>
-
+      {/*================= COMMENT SECTION =================*/}
       <div className="max-w-7xl mx-auto mt-6 p-6 bg-base-100 rounded-lg">
         <h5 className="text-2xl  font-bold text-primary">Enter Your Comment</h5>
         <div className="flex items-start mt-4">
