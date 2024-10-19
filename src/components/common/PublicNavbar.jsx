@@ -141,17 +141,90 @@ const PublicNavbar = ({ theme, user }) => {
 
           <div
             tabIndex={0}
-            className="card card-compact dropdown-content bg-primary z-[1] mt-3 w-52 shadow"
+            className="card card-compact dropdown-content text-base-content bg-base-100 z-[1] mt-3 w-96 shadow"
           >
-            <div className="card-body">
-              <span className="text-lg font-bold">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-secondary btn-block">
-                  View cart
-                </button>
-              </div>
-            </div>
+            <ul className="menu menu-lg rounded-box ">
+              <h2 className="font-bold mt-2 pl-6">Shopping cart</h2>
+              <div className="divider m-0"></div>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="text-sm  font-semibold text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm "> $ 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover btn-xs">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="text-sm  font-semibold text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm "> $ 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover btn-xs">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="text-sm  font-semibold text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm "> $ 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover btn-xs">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+
+              <div className="divider m-0"></div>
+              <button className="link link-primary link-hover">View all</button>
+            </ul>
           </div>
         </div>
 
