@@ -10,7 +10,8 @@ function App({ children }) {
   return (
     <div data-theme={theme}>
       {children}
-      <Toaster />
+
+      <Toaster richColors position="top-center" />
     </div>
   );
 }
