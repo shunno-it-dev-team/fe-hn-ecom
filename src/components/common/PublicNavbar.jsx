@@ -5,6 +5,7 @@ import { setThemeToRedux } from "../../redux/reducers/globalSlice";
 import CustomModal from "./CustomModal";
 import AuthWrapper from "../../pages/public/auth/AuthWrapper";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const PublicNavbar = ({ theme, user }) => {
   return (
@@ -112,6 +113,7 @@ const PublicNavbar = ({ theme, user }) => {
           </svg>
         </label>
 
+        {/* CART */}
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -153,6 +155,7 @@ const PublicNavbar = ({ theme, user }) => {
           </div>
         </div>
 
+        {/* NOTIFICATION */}
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -180,17 +183,45 @@ const PublicNavbar = ({ theme, user }) => {
 
           <div
             tabIndex={0}
-            className="card card-compact dropdown-content bg-primary z-[1] mt-3 w-52 shadow"
+            className="card card-compact dropdown-content text-base-content bg-base-100 z-[1] mt-3 w-80 shadow"
           >
-            <div className="card-body">
-              <span className="text-lg font-bold">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-secondary btn-block">
-                  View cart
-                </button>
-              </div>
-            </div>
+            <ul className="menu menu-lg rounded-box ">
+              <h2 className="font-bold mt-2 pl-6">Notification</h2>
+              <div className="divider m-0"></div>
+              <li>
+                <Link href="/" className="justify-between">
+                  <div className="flex flex-col">
+                    <h4 className="font-bold text-sm text-primary">
+                      Order #34567
+                    </h4>
+                    <span className="text-xs">Your order is placed</span>
+                    <span className="text-xs text-primary">1 minute ago</span>
+                  </div>
+                  <span className="badge badge-primary badge-xs"></span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="justify-between">
+                  <div className="flex flex-col">
+                    <h4 className="font-bold text-sm">Order #34567</h4>
+                    <span className="text-xs">Your order is placed</span>
+                    <span className="text-xs">2 hours ago</span>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="justify-between">
+                  <div className="flex flex-col">
+                    <h4 className="font-bold text-sm">Order #34567</h4>
+                    <span className="text-xs">Your order is placed</span>
+                    <span className="text-xs">2 hours ago</span>
+                  </div>
+                </Link>
+              </li>
+
+              <div className="divider m-0"></div>
+              <button className="link link-primary link-hover">View all</button>
+            </ul>
           </div>
         </div>
 

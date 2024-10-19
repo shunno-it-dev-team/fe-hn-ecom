@@ -5,6 +5,28 @@
 @tailwind utilities;
 
 /* ==================== SWIPER CSS ==================== */
+/* Increase specificity by targeting body, html or a wrapper element */
+html::-webkit-scrollbar {
+  width: 8px !important;
+  height: 5px !important;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 100vh !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.1) !important;
+  border-radius: 100vh !important;
+  border: 1px solid #077886 !important;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0 !important;
+  cursor: grabbing !important;
+}
 
 :root {
   --swiper-theme-color: theme("colors.primary");

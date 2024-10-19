@@ -51,7 +51,7 @@ const CategoryVerticalBar = ({ categories, isLoading }) => {
 
         <div
           ref={scrollRef}
-          className="flex gap-3 items-center overflow-x-hidden rounded-3xl"
+          className="flex gap-3 items-center justify-center overflow-x-hidden rounded-3xl"
         >
           {categories &&
             categories.map((category) => (
