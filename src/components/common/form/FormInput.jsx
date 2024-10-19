@@ -320,7 +320,7 @@ const FormInput = ({ formData, control, size }) => {
 
               {/* Display range values */}
               <div className="flex items-center justify-between">
-                <span>{input.min || 0}</span>
+                <span>{input.min || 0} </span>
                 <span>{field.value ? field.value.join(" - ") : ""}</span>{" "}
               </div>
 

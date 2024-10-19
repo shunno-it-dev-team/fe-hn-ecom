@@ -17,9 +17,14 @@ const ProfileSidebar = () => {
       link: "/profile/address-book",
     },
     {
-      title: "Payments",
+      title: "Payment History",
       icon: "FaCreditCard",
       link: "/profile/payments",
+    },
+    {
+      title: " My Order List",
+      icon: "FaBabyCarriage",
+      link: "/profile/order",
     },
   ];
 

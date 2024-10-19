@@ -54,11 +54,11 @@ const ProductImage = () => {
   return (
     <div>
       <ImageGallery
-        items={images}
         showNav={false}
+        items={images}
         showPlayButton={false}
         showFullscreenButton={false}
-        renderItem={renderMagnifiedImage} // Pass the custom render function
+        renderItem={renderMagnifiedImage}
       />
     </div>
   );

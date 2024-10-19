@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductImage from "../product-image/ProductImage";
 import ProductReviewTable from "./ProductReviewTable";
+import Rating from "react-rating";
+import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -181,38 +183,49 @@ const ProductDetailsPage = () => {
             {/*================= REVIEW CONTENT =================*/}
             <div className="flex flex-col">
               <h3 className="font-semibold ">John Doe</h3>
-              <p className="">Very unhappy with my purchase!</p>
+              <p className="">Very happy with my purchase!</p>
 
               {/*================= RATING ================= */}
-              <div className="rating mt-2">
-                <input
-                  type="radio"
-                  name="rating-5"
-                  className="mask mask-star-2 bg-primary"
+              <div className="text-warning ">
+                <Rating
+                  initialRating={product.rating.rate}
+                  readonly
+                  emptySymbol={<FaIconByKeyName iconName="FaRegStar" />}
+                  fullSymbol={<FaIconByKeyName iconName="FaStar" />}
                 />
-                <input
-                  type="radio"
-                  name="rating-5"
-                  className="mask mask-star-2 bg-primary"
-                  defaultChecked
-                />
-                <input
-                  type="radio"
-                  name="rating-5"
-                  className="mask mask-star-2 bg-primary"
-                />
-                <input
-                  type="radio"
-                  name="rating-5"
-                  className="mask mask-star-2 bg-primary"
-                />
-                <input
-                  type="radio"
-                  name="rating-5"
-                  className="mask mask-star-2 bg-primary"
-                />
+                <span className="text-sm text-secondary ml-1">
+                  ({product.rating.count})
+                </span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      {/*================= COMMENT SECTION =================*/}
+      <div className="max-w-7xl mx-auto mt-6 p-6 bg-base-100 rounded-lg">
+        <h5 className="text-2xl  font-bold text-primary">Enter Your Comment</h5>
+        <div className="flex items-start mt-4">
+          <div className="mr-3">
+            <img
+              src="https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_1.jpeg"
+              alt=""
+              className="w-16 h-16 rounded-full border"
+            />
+          </div>
+          <div className="flex-grow">
+            <form>
+              <div className="form-control">
+                <textarea
+                  className="textarea textarea-bordered p-2 w-full"
+                  rows="2"
+                  placeholder="write your review"
+                ></textarea>
+              </div>
+              <div className="mt-3 text-center md:text-right">
+                <button className="btn btn-outline mr-4">CANCEL</button>
+                <button className="btn btn-primary">POST</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
