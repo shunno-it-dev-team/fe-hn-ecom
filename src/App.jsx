@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 
 function App({ children }) {
-  const {
-    global: { theme },
-  } = useSelector((state) => state);
+  const theme = useSelector((state) => state.global.theme);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);

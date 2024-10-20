@@ -6,6 +6,8 @@ import { Controller } from "react-hook-form";
 import FormInputWrapper from "./FormInputWrapper";
 import { cn } from "../../../helpers/dynamicClassName";
 import PasswordField from "./PasswordField";
+import ReactSelect from "react-select";
+
 // import ImageInput from "./ImageInput";
 // import RichEditor from "./RichEditor";
 
@@ -35,6 +37,7 @@ const FormInput = ({ formData, control, size }) => {
             >
               <input
                 type={input.type}
+                disabled={input.disabled}
                 placeholder={input.placeholder}
                 className={cn(
                   "input input-bordered w-full",
@@ -96,6 +99,7 @@ const FormInput = ({ formData, control, size }) => {
             >
               <textarea
                 placeholder={input.placeholder}
+                disabled={input.disabled}
                 className={cn(
                   "textarea textarea-bordered",
                   input.inputClassName,
@@ -300,18 +304,13 @@ const FormInput = ({ formData, control, size }) => {
           name={input.name}
           control={control}
           render={({ field, fieldState }) => (
-            <div
-              className={cn(
-                "form-control w-full",
-                {
-                  [`col-span-${input.colSpans?.xs}`]: input.colSpans?.xs,
-                  [`sm:col-span-${input.colSpans?.sm}`]: input.colSpans?.sm,
-                  [`md:col-span-${input.colSpans?.md}`]: input.colSpans?.md,
-                  [`lg:col-span-${input.colSpans?.lg}`]: input.colSpans?.lg,
-                  [`xl:col-span-${input.colSpans?.xl}`]: input.colSpans?.xl,
-                },
-                input.className
-              )}
+            <FormInputWrapper
+              {...{
+                label: input.label,
+                errorMessage: fieldState?.error?.message,
+                colSpans: input.colSpans,
+                className: input.className,
+              }}
             >
               <label htmlFor={input.id} className="font-bold pb-1 w-full block">
                 {input.label}{" "}
@@ -325,11 +324,10 @@ const FormInput = ({ formData, control, size }) => {
               </div>
 
               <div className="px-2">
-                <TooltipSlider
-                  range
-                  min={input.min || 0}
-                  max={input.max || 20}
-                  defaultValue={[input.min || 0, input.max || 20]}
+                <ReactSelect
+                  isDisabled={input.disabled}
+                  options={input.options}
+                  defaultValue={input.options[0]}
                   value={field.value}
                   onChange={(value) => field.onChange(value)}
                   styles={{
@@ -337,7 +335,7 @@ const FormInput = ({ formData, control, size }) => {
                       borderColor:
                         "var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)))",
                       backgroundColor:
-                        "var(--fallback-pc,oklch(var(--pc)/var(--tw-bg-opacity)))",
+                        "var(--fallback-pc,oklch(var(--pc)/var(--tw-bg-opacity))",
                     },
 
                     track: {
@@ -355,7 +353,7 @@ const FormInput = ({ formData, control, size }) => {
                   </span>
                 </div>
               )}
-            </div>
+            </FormInputWrapper>
           )}
         />
       );

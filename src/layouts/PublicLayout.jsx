@@ -5,11 +5,9 @@ import MobileTopBar from "../components/common/MobileTopBar";
 import { useSelector } from "react-redux";
 
 const PublicLayout = () => {
-  const {
-    global: { theme },
-  } = useSelector((state) => state);
+  const theme = useSelector((state) => state.global.theme);
 
-  const user = false;
+  const user = {};
   return (
     <>
       <MobileTopBar {...{ theme, user }} />

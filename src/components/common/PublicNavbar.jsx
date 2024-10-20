@@ -6,6 +6,7 @@ import CustomModal from "./CustomModal";
 import AuthWrapper from "../../pages/public/auth/AuthWrapper";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import FaIconByKeyName from "../icons/FaIconByKeyName";
 
 const PublicNavbar = ({ theme, user }) => {
   return (
@@ -244,17 +245,17 @@ const PublicNavbar = ({ theme, user }) => {
               className="menu menu-sm dropdown-content rounded-box z-10 bg-primary mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a href="/" className="justify-between">
+                <Link to="/profile/personal-information">
+                  <FaIconByKeyName iconName="FaUserCircle" />
                   Profile
-                  <span className="badge">New</span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
+                <Link to="/logout">
+                  <FaIconByKeyName iconName="FaSignOutAlt" />
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>

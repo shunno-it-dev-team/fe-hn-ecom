@@ -5,25 +5,8 @@ import Products from "./sub-components/Products";
 import CategoryVerticalBar from "./sub-components/CategoryVerticalBar";
 
 const Home = () => {
-  // const {
-  //   data: products,
-  //   categories,
-  //   isLoading,
-  // } = useGetProductQuery(undefined, {
-  //   selectFromResult: ({ data, isSuccess, ...rest }) => {
-  //     if (isSuccess) {
-  //       const categories = data.map((item) => ({
-  //         category: item.category,
-  //         id: item.id,
-  //       }));
-
-  //       return { data, categories, isSuccess, ...rest };
-  //     }
-  //     return { data, categories: [], isSuccess, ...rest };
-  //   },
-  // });
   const {
-    data: products,
+    data: products = [],
     categories,
     isLoading,
   } = useGetProductQuery(undefined, {
