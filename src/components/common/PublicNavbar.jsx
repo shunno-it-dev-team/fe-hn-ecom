@@ -142,15 +142,122 @@ const PublicNavbar = ({ theme, user }) => {
 
           <div
             tabIndex={0}
-            className="card card-compact dropdown-content bg-primary z-[1] mt-3 w-52 shadow"
+            className="card card-compact dropdown-content text-base-content bg-base-100 z-[1] mt-3 w-96 shadow"
           >
-            <div className="card-body">
-              <span className="text-lg font-bold">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-secondary btn-block">
-                  View cart
-                </button>
+            <ul className="menu menu-lg rounded-box ">
+              <h2 className="font-bold mt-2 pl-6">Shopping cart</h2>
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                ✕
+              </button>
+              <div className="divider m-0"></div>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="font-bold text-sm text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm "> &#2547; 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover text-xs ">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="font-bold text-sm text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm "> &#2547; 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover text-xs ">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/">
+                  <figure className="h-14 w-14 rounded-none ">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                      alt="Album"
+                    />
+                  </figure>
+                  <div className="gap-8">
+                    <div className="flex justify-between mb-4">
+                      <p className="font-bold text-sm text-primary">
+                        Throwback Hip Bag
+                      </p>
+                      <p className="text-sm ">&#2547; 90</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-sm ">Qty 1</p>
+                      <button className="link-primary link-hover text-xs ">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+            <div className="gap-8">
+              <div className=" mb-4">
+                <div className="border-t border-base-300 px-4 py-6 sm:px-6">
+                  <div className="flex justify-between text-base font-medium text-base-content">
+                    <p>Subtotal</p>
+                    <p>&#2547; 262.00</p>
+                  </div>
+                  <p className="mt-0.5 text-sm text-secondary">
+                    Shipping and taxes calculated at checkout.
+                  </p>
+
+                  <div className="mt-6">
+                    <a href="#" className="btn btn-primary w-full">
+                      Checkout
+                    </a>
+                  </div>
+
+                  <div className="mt-6 flex justify-center text-center text-sm text-secondary">
+                    <p>
+                      or
+                      <Link href="/">
+                        <button
+                          type="button"
+                          className="font-medium text-primary hover:text-base-content"
+                        >
+                          Continue Shopping
+                          <span aria-hidden="true"> &rarr;</span>
+                        </button>
+                      </Link>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -188,6 +295,9 @@ const PublicNavbar = ({ theme, user }) => {
           >
             <ul className="menu menu-lg rounded-box ">
               <h2 className="font-bold mt-2 pl-6">Notification</h2>
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                ✕
+              </button>
               <div className="divider m-0"></div>
               <li>
                 <Link href="/" className="justify-between">

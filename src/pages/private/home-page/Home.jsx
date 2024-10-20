@@ -3,6 +3,7 @@ import Container from "../../../components/common/Container";
 import { useGetProductQuery } from "../../../redux/api/services/product.service";
 import Products from "./sub-components/Products";
 import CategoryVerticalBar from "./sub-components/CategoryVerticalBar";
+import FamousProductsCategory from "../../public/product/FamousProductsCategory";
 
 const Home = () => {
   const {
@@ -23,6 +24,7 @@ const Home = () => {
             });
           }
         });
+        console.log(data);
 
         const categories = Array.from(categoryMap.values());
 
@@ -38,6 +40,7 @@ const Home = () => {
 
       <Container>
         <CategoryVerticalBar categories={categories} isLoading={isLoading} />
+        <FamousProductsCategory />
         <Products products={products} isLoading={isLoading} />
       </Container>
     </section>

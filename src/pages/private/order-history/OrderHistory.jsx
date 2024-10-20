@@ -36,7 +36,7 @@ const OrderHistory = () => {
           ) : row.status === "In transit" ? (
             <span className="inline-block w-2 h-2 mr-1 bg-secondary rounded-full"></span>
           ) : (
-            <span className="inline-block w-2 h-2 mr-1 bg-success rounded-full"></span>
+            <span className="inline-block w-2 h-2 mr-1 bg-success rounded-full "></span>
           )}
           {row.status}
         </span>
