@@ -9,16 +9,8 @@ function App({ children }) {
   } = useSelector((state) => state);
 
   useEffect(() => {
-    window.onload = () => {
-      document.body.setAttribute("data-theme", theme);
-    };
-
-    // return () => {
-    //   window.onload = null;
-    // };
-  }, []);
-
-  console.log("theme", theme);
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
   return (
     <>
