@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { useGetProductQuery } from "../../../redux/api/services/product.service";
 // import CardSkeleton from "../../../components/skeleton/CardSkeleton";
 import CustomCard from "../../../components/common/CustomCard";
@@ -17,49 +17,50 @@ const FamousProductsCategory = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto mb-10">
-      <div className="w-full flex bg-primary py-6 px-4 mt-10 rounded-lg">
+      <div className="w-full flex flex-col items-center lg:flex-row bg-primary/60 lg:px-4 py-6  mt-10 rounded-lg">
         {/*=========== SWIPER NAVIGATION ARROWS ===========*/}
-        <div className="w-1/5  items-center justify-center ">
+        <div className="lg:w-1/5 flex flex-col items-center lg:items-start mb-4 lg:mb-0 justify-between">
           {/* TITLE */}
-          <div className="py-10">
+          <div className="pb-5">
             <div>
-              <h2 className=" text-2xl text-base-100 font-bold ">
+              <h2 className="text-2xl text-base-100 font-bold ">
                 Popular Category
               </h2>
             </div>
           </div>
+
+          {/* CAROUSEL NAVIGATION  */}
           <div className="flex flex-row space-x-4">
-            {/* Left Arrow */}
-
-            <div
-              ref={prevRef}
-              className="cursor-pointer text-base-100 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/50 p-4 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition duration-300"
-            >
+            <button ref={prevRef} className="btn btn-primary btn-circle">
               <FaIconByKeyName iconName={"FaAngleLeft"} />
-            </div>
+            </button>
 
-            {/* Right Arrow */}
-            <div
-              ref={nextRef}
-              className="cursor-pointer text-base-100 bg-gradient-to-r from-secondary/50 via-secondary/70 to-secondary p-4 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition duration-300"
-            >
+            <div ref={nextRef} className="btn btn-primary btn-circle">
               <FaIconByKeyName iconName={"FaAngleRight"} />
             </div>
           </div>
         </div>
 
-        <div className="w-4/5 relative">
+        <div className="w-4/5">
           {/*=========== Swiper Slider ===========*/}
           <Swiper
-            spaceBetween={20}
-            slidesPerView={4}
+            spaceBetween={10}
+            slidesPerView={1}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+
+              768: {
+                slidesPerView: 4,
+              },
+            }}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
-            pagination={{ clickable: true }}
-            modules={[Navigation, Pagination]}
-            className="mySwiper  overflow-hidden "
+            modules={[Navigation]}
+            className="mySwiper"
             onInit={(swiper) => {
               swiper.params.navigation.prevEl = prevRef.current;
               swiper.params.navigation.nextEl = nextRef.current;
