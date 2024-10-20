@@ -4,29 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scrollbar-color: initial;
+}
+
+*:hover {
+  scrollbar-color: initial;
+}
+
 /* ==================== SWIPER CSS ==================== */
-/* Increase specificity by targeting body, html or a wrapper element */
-html::-webkit-scrollbar {
-  width: 8px !important;
-  height: 5px !important;
-}
-
-html::-webkit-scrollbar-track {
-  border-radius: 100vh !important;
-  background: rgba(0, 0, 0, 0.2) !important;
-  backdrop-filter: blur(10px) !important;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: rgba(128, 128, 128, 0.1) !important;
-  border-radius: 100vh !important;
-  border: 1px solid #077886 !important;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0 !important;
-  cursor: grabbing !important;
-}
 
 :root {
   --swiper-theme-color: theme("colors.primary");
@@ -104,6 +90,21 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px !important;
-  height: 8px !important;
+  @apply w-3 h-8 px-2;
+  animation: scrollWidth 500ms ease-in-out;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply py-2 bg-base-100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-primary border-4 border-error rounded-full;
+}
+
+/* Handle on hover  */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80 border-2 border-accent cursor-grab;
 }
