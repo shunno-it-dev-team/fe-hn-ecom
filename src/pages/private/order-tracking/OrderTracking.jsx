@@ -253,7 +253,7 @@ const OrderTracking = () => {
 
           <div className="mb-6">
             <p className="text-sm text-base-400">Total price</p>
-            <p className="font-bold text-lg text-gray-900">$7,191.00</p>
+            <p className="font-bold text-lg text-gray-900">&#2547;7,191.00</p>
           </div>
 
           <div className="mt-6 space-x-2 flex items-center justify-center">
