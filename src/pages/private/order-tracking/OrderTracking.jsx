@@ -6,7 +6,7 @@ const OrderTracking = () => {
       {/*================ PROGRESS TRACKER ================ */}
       <div className="max-w-screen-xl mx-auto  p-4 sm:p-6">
         {/* Heading */}
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-6">
           Track the delivery of order #957684673
         </h2>
 
@@ -101,7 +101,7 @@ const OrderTracking = () => {
       {/*================ MAIN CONTENT ================ */}
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6 p-4">
         {/* ================ PRODUCTS LIST TABLE ================*/}
-        <div className="lg:col-span-2  sm:p-6 rounded-lg border ">
+        <div className="lg:col-span-2  sm:p-6 rounded-lg border shadow-lg ">
           <div className="overflow-y-auto max-h-60 ">
             <table className="table ">
               <thead className="sticky top-0 bg-primary ">
@@ -115,53 +115,93 @@ const OrderTracking = () => {
                 {/* Product Rows */}
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border">
-                      <img src="" alt="" />
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
                     </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border"></div>
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
+                    </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border"></div>
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
+                    </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border"></div>
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
+                    </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border"></div>
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
+                    </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
                 <tr>
                   <td className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-base-200 rounded-md border"></div>
+                    <div className="w-10 h-10 bg-base-200 rounded-md border">
+                      <figure>
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                          alt="Movie"
+                        />
+                      </figure>
+                    </div>
                     <div>Apple iMac 27”</div>
                   </td>
-                  <td>x1</td>
-                  <td>$1,499</td>
+                  <td>&#215;1</td>
+                  <td>&#2547;1,499</td>
                 </tr>
               </tbody>
             </table>
@@ -169,36 +209,60 @@ const OrderTracking = () => {
         </div>
 
         {/*================ ORDER SUMMARY ================ */}
-        <div className="border p-4 sm:p-6 rounded-lg ">
-          <h2 className="text-lg sm:text-xl text-primary font-bold mb-4">
-            Order Details
-          </h2>
-          <ul className="text-sm space-y-2">
-            <li>
-              <strong>Order date:</strong> 24 November 2023
-            </li>
-            <li>
-              <strong>Email:</strong> name@example.com
-            </li>
-            <li>
-              <strong>Phone:</strong> +123 456 7890
-            </li>
-            <li>
-              <strong>Payment method:</strong>{" "}
-              <span className="text-primary">●</span> Credit Card
-            </li>
-            <li>
-              <strong>Shipping address:</strong> Master Para, Saheb Bazar,
-              Rajshahi
-            </li>
-            <li>
-              <strong>Total price:</strong>{" "}
-              <span className="font-bold text-warning">$7,191.00 </span>
-            </li>
-          </ul>
-          <div className="mt-6 space-y-2">
-            <button className="btn btn-error w-full">Cancel the order</button>
-            <button className="btn btn-primary w-full">Order details</button>
+        <div className="max-w-md mx-auto rounded-lg shadow-lg p-4">
+          <h2 className="text-xl font-bold mb-4 text-primary">Order Details</h2>
+
+          <div className="mb-2 ">
+            <p className="text-sm text-base-400">Order date</p>
+            <p className="font-medium">24 November 2023</p>
+          </div>
+
+          <div className="mb-2">
+            <p className="text-sm text-base-400">Email</p>
+            <p className="font-medium">name@example.com</p>
+          </div>
+
+          <div className="mb-2">
+            <p className="text-sm text-base-400">Phone</p>
+            <p className="font-medium">+123 456 7890</p>
+          </div>
+
+          <div className="mb-2 flex items-center">
+            <p className="text-sm text-base-400">Payment method</p>
+            <div className="ml-2 flex items-center">
+              <span className="text-error-500 mr-1">
+                {/* <!-- Payment Icon, example for Mastercard --> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  viewBox="0 0 48 48"
+                >
+                  <circle cx="16" cy="24" r="12" fill="#FF5F00" />
+                  <circle cx="32" cy="24" r="12" fill="#EB001B" />
+                  <circle cx="24" cy="24" r="12" fill="#F79E1B" opacity=".5" />
+                </svg>
+              </span>
+              <p className="font-medium">Credit Card</p>
+            </div>
+          </div>
+
+          <div className="mb-2">
+            <p className="text-sm text-base-400">Shipping address</p>
+            <p className="font-medium">Master Para, Saheb Bazar, Rajshahi</p>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-sm text-base-400">Total price</p>
+            <p className="font-bold text-lg text-gray-900">$7,191.00</p>
+          </div>
+
+          <div className="mt-6 space-x-2 flex items-center justify-center">
+            <button className="btn btn-sm btn-error  hover:btn-secondary transition-all w-40 ">
+              Cancel the order
+            </button>
+            <button className="btn btn-sm btn-info  hover:btn-success transition-all w-40">
+              Order details
+            </button>
           </div>
         </div>
       </div>
