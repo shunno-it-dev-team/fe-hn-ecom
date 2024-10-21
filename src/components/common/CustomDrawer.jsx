@@ -5,14 +5,16 @@ const CustomDrawer = ({
   children,
   drawerId,
   drawerSidebarWidth = "w-56",
-  sidebarClassName,
   sidebarComponent,
+  className,
+  pageContentClassName,
+  sidebarClassName,
 }) => {
   return (
-    <div className="drawer lg:drawer-open py-2">
+    <div className={cn("drawer lg:drawer-open py-2", className)}>
       <input id={drawerId} type="checkbox" className="drawer-toggle" />
 
-      <div className="drawer-content px-1">
+      <div className={cn("drawer-content px-1", pageContentClassName)}>
         {/* Page content here */}
         {children}
       </div>
@@ -34,7 +36,9 @@ CustomDrawer.propTypes = {
   children: PropTypes.node.isRequired,
   drawerId: PropTypes.string.isRequired,
   drawerSidebarWidth: PropTypes.string,
+  className: PropTypes.string,
   sidebarClassName: PropTypes.string,
+  pageContentClassName: PropTypes.string,
   sidebarComponent: PropTypes.node.isRequired,
 };
 

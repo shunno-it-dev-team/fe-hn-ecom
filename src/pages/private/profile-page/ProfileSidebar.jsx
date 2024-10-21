@@ -29,8 +29,15 @@ const ProfileSidebar = () => {
   ];
 
   return (
-    <div className="bg-base-100 rounded-lg p-3 flex flex-col gap-3 sticky top-20">
+    <div className="bg-base-100 lg:rounded-lg p-3 flex flex-col gap-3 relative h-full lg:h-auto">
       <div className="flex flex-col items-center">
+        <label
+          htmlFor="profile-drawer"
+          className="btn btn-xs btn-circle absolute top-2 right-2 lg:hidden"
+        >
+          <FaIconByKeyName iconName="FaTimes" />
+        </label>
+
         {/* avatar  */}
         <label
           htmlFor="avatar"
@@ -53,7 +60,7 @@ const ProfileSidebar = () => {
         <p className="text-sm">tasnia@mail.com</p>
       </div>
 
-      <ul className="menu bg-base-200 rounded-box w-56">
+      <ul className="menu bg-base-200 rounded-box">
         {profileMenu.map((item, index) => (
           <li key={index}>
             <Link
