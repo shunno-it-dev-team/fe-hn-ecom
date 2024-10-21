@@ -3,14 +3,14 @@ import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
 const OrderTracking = () => {
   return (
     <div className="max-w-screen-xl mx-auto p-4 sm:p-6">
-      {/*================ PROGRESS TRACKER ================ */}
+      {/* ================ PROGRESS TRACKER ================ */}
       <div className="max-w-screen-xl mx-auto  p-4 sm:p-6">
         {/* Heading */}
         <h2 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-6">
           Track the delivery of order #957684673
         </h2>
 
-        {/*  steps */}
+        {/* ================ STEPS ================ */}
         <div className="p-4 sm:p-6 rounded-lg">
           <ul className="steps steps-vertical sm:steps-horizontal w-full">
             {/* Step 1 */}
@@ -20,9 +20,7 @@ const OrderTracking = () => {
                 <p className="text-sm mt-2">
                   Order placed
                   <br />
-                  <span className="text-xs text-primary">
-                    19 Nov 2023: 10:45
-                  </span>
+                  <span className="text-xs text-primary">19 Nov 2023</span>
                 </p>
               </div>
             </li>
@@ -34,9 +32,7 @@ const OrderTracking = () => {
                 <p className="text-sm mt-2">
                   Payment accepted
                   <br />
-                  <span className="text-xs text-primary">
-                    19 Nov 2023: 10:47
-                  </span>
+                  <span className="text-xs text-primary">19 Nov 2023</span>
                 </p>
               </div>
             </li>
@@ -48,9 +44,7 @@ const OrderTracking = () => {
                 <p className="text-sm mt-2">
                   Products delivered to the courier - DHL
                   <br />
-                  <span className="text-xs text-primary">
-                    22 Nov 2023: 12:27
-                  </span>
+                  <span className="text-xs text-primary">22 Nov 2023</span>
                 </p>
               </div>
             </li>
@@ -62,9 +56,7 @@ const OrderTracking = () => {
                 <p className="text-sm mt-2">
                   Products in the courier warehouse
                   <br />
-                  <span className="text-xs text-primary">
-                    23 Nov 2023: 15:15
-                  </span>
+                  <span className="text-xs text-primary">23 Nov 2023</span>
                 </p>
               </div>
             </li>
@@ -212,48 +204,43 @@ const OrderTracking = () => {
         <div className="max-w-md mx-auto rounded-lg shadow-lg p-4">
           <h2 className="text-xl font-bold mb-4 text-primary">Order Details</h2>
 
-          <div className="mb-2 ">
+          <div className="mb-2 flex items-center justify-between ">
             <p className="text-sm text-base-400">Order date</p>
-            <p className="font-medium">24 November 2023</p>
+            <p className="font-medium text-sm">24 November 2023</p>
           </div>
 
-          <div className="mb-2">
+          <div className="mb-2 flex items-center justify-between">
             <p className="text-sm text-base-400">Email</p>
-            <p className="font-medium">name@example.com</p>
+            <p className="font-medium text-sm">name@example.com</p>
           </div>
 
-          <div className="mb-2">
+          <div className="mb-2 flex items-center justify-between">
             <p className="text-sm text-base-400">Phone</p>
-            <p className="font-medium">+123 456 7890</p>
+            <p className="font-medium text-sm">+123 456 7890</p>
           </div>
 
-          <div className="mb-2 flex items-center">
+          <div className="mb-2 flex items-center justify-between">
             <p className="text-sm text-base-400">Payment method</p>
             <div className="ml-2 flex items-center">
               <span className="text-error-500 mr-1">
-                {/* <!-- Payment Icon, example for Mastercard --> */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 48 48"
-                >
-                  <circle cx="16" cy="24" r="12" fill="#FF5F00" />
-                  <circle cx="32" cy="24" r="12" fill="#EB001B" />
-                  <circle cx="24" cy="24" r="12" fill="#F79E1B" opacity=".5" />
-                </svg>
+                <FaIconByKeyName iconName={"FaCreditCard"} size="2x" />
               </span>
-              <p className="font-medium">Credit Card</p>
+              <p className="font-medium text-sm">Credit Card</p>
             </div>
           </div>
 
-          <div className="mb-2">
+          <div className="mb-2 flex items-center justify-between  ">
             <p className="text-sm text-base-400">Shipping address</p>
-            <p className="font-medium">Master Para, Saheb Bazar, Rajshahi</p>
+            <p className="font-medium text-xs">
+              Master Para, Saheb Bazar, Rajshahi
+            </p>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-2 flex items-center justify-between">
             <p className="text-sm text-base-400">Total price</p>
-            <p className="font-bold text-lg text-gray-900">&#2547;7,191.00</p>
+            <p className="font-bold text-sm text-base-content ">
+              &#2547;7,191.00
+            </p>
           </div>
 
           <div className="mt-6 space-x-2 flex items-center justify-center">
