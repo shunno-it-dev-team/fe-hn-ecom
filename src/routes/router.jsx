@@ -15,6 +15,7 @@ import PersonalInfo from "../pages/private/profile-page/profile-info/PersonalInf
 import AddressBook from "../pages/private/profile-page/address-book/AddressBook";
 import OrderHistory from "../pages/private/order-history/OrderHistory";
 import PaymentHistory from "../pages/private/payment-history/PaymentHistory";
+import OrderTracking from "../pages/private/order-tracking/OrderTracking";
 // import NotificationPage from "./../pages/private/notification-page/NotificationPage";
 
 export const router = createBrowserRouter([
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
       {
         path: "/checkOut",
         element: <CheckOutPage />,
+      },
+      {
+        path: "/orderTracking",
+        element: <OrderTracking />,
       },
       {
         path: "/profile",

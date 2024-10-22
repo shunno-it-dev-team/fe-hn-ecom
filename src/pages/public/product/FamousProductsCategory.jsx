@@ -24,7 +24,7 @@ const FamousProductsCategory = () => {
           <div className="pb-5">
             <div>
               <h2 className="text-2xl text-base-100 font-bold ">
-                Popular Category
+                Popular Item
               </h2>
             </div>
           </div>
@@ -71,7 +71,7 @@ const FamousProductsCategory = () => {
             {/* Loading state */}
             {/* <CardSkeleton length={8} isLoading={isLoading} /> */}
 
-            {/*=========== Product cards as Swiper slides ===========*/}
+            {/*=========== PRODUCT CARDS AS SWIPER SLIDES ===========*/}
             {!isLoading &&
               products &&
               products.map((product) => (

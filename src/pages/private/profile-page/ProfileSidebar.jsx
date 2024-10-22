@@ -57,7 +57,7 @@ const ProfileSidebar = () => {
         </label>
 
         <h2 className="text-lg font-semibold mt-4">Tasnia Rahman</h2>
-        <p className="text-sm">tasnia@mail.com</p>
+        <p className="text-sm">tasnia@email.com</p>
       </div>
 
       <ul className="menu bg-base-200 rounded-box">
