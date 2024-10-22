@@ -146,9 +146,9 @@ const PublicNavbar = ({ theme, user }) => {
           >
             <ul className="menu menu-lg rounded-box ">
               <h2 className="font-bold mt-2 pl-6">Shopping cart</h2>
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
-              </button>
+              </button> */}
               <div className="divider m-0"></div>
 
               <li>
@@ -295,9 +295,9 @@ const PublicNavbar = ({ theme, user }) => {
           >
             <ul className="menu menu-lg rounded-box ">
               <h2 className="font-bold mt-2 pl-6">Notification</h2>
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
-              </button>
+              </button> */}
               <div className="divider m-0"></div>
               <li>
                 <Link href="/" className="justify-between">
