@@ -165,7 +165,7 @@ const NotificationPage = () => {
                     </div>
                     <div>
                       <button
-                        className="btn btn-sm btn-error"
+                        className="btn btn-sm "
                         onClick={() => handleDelete(notification.id)}
                       >
                         <FaIconByKeyName iconName="FaTrashAlt" size="2x" />
