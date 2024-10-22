@@ -16,6 +16,7 @@ import AddressBook from "../pages/private/profile-page/address-book/AddressBook"
 import OrderHistory from "../pages/private/order-history/OrderHistory";
 import PaymentHistory from "../pages/private/payment-history/PaymentHistory";
 import OrderTracking from "../pages/private/order-tracking/OrderTracking";
+import NotificationPage from "../pages/private/notification-page/NotificationPage";
 // import NotificationPage from "./../pages/private/notification-page/NotificationPage";
 
 export const router = createBrowserRouter([
@@ -36,12 +37,12 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //   path: "/notifications-page",
-      //   element: <NotificationPage />,
-      // },
       {
-        path: "/cart-page",
+        path: "/notifications",
+        element: <NotificationPage />,
+      },
+      {
+        path: "/cart",
         element: <CartPage />,
       },
       {
@@ -65,11 +66,11 @@ export const router = createBrowserRouter([
         element: <SearchingPage />,
       },
       {
-        path: "/checkOut",
+        path: "/checkout",
         element: <CheckOutPage />,
       },
       {
-        path: "/orderTracking",
+        path: "/order-tracking",
         element: <OrderTracking />,
       },
       {

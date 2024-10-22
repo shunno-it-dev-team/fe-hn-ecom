@@ -49,13 +49,13 @@ const PublicNavbar = ({ theme, user }) => {
 
       {/* NAVBAR CENTER */}
       <div className="navbar-center ">
-        <button className="btn btn-ghost text-xl hover:bg-transparent">
+        <Link to="/" className="btn btn-ghost text-xl hover:bg-transparent">
           <img
             src="/src/assets/logo/logo-520e4690.png"
             alt=""
             className="w-auto h-6"
           />
-        </button>
+        </Link>
       </div>
 
       {/* NAVBAR END */}
@@ -146,9 +146,6 @@ const PublicNavbar = ({ theme, user }) => {
           >
             <ul className="menu menu-lg rounded-box ">
               <h2 className="font-bold mt-2 pl-6">Shopping cart</h2>
-              {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </button> */}
               <div className="divider m-0"></div>
 
               <li>
@@ -226,38 +223,28 @@ const PublicNavbar = ({ theme, user }) => {
                 </Link>
               </li>
             </ul>
-            <div className="gap-8">
-              <div className=" mb-4">
-                <div className="border-t border-base-300 px-4 py-6 sm:px-6">
-                  <div className="flex justify-between text-base font-medium text-base-content">
-                    <p>Subtotal</p>
-                    <p>&#2547; 262.00</p>
-                  </div>
-                  <p className="mt-0.5 text-sm text-secondary">
-                    Shipping and taxes calculated at checkout.
-                  </p>
 
-                  <div className="mt-6">
-                    <a href="#" className="btn btn-primary w-full">
-                      Checkout
-                    </a>
-                  </div>
+            <div className="flex flex-col gap-3 border-t border-base-300 px-4 py-6 sm:px-6">
+              <div className="flex justify-between text-base font-bold text-base-content">
+                <p>Subtotal</p>
+                <p>&#2547; 262.00</p>
+              </div>
 
-                  <div className="mt-6 flex justify-center text-center text-sm text-secondary">
-                    <p>
-                      or
-                      <Link href="/">
-                        <button
-                          type="button"
-                          className="font-medium text-primary hover:text-base-content"
-                        >
-                          Continue Shopping
-                          <span aria-hidden="true"> &rarr;</span>
-                        </button>
-                      </Link>
-                    </p>
-                  </div>
-                </div>
+              <p className=" text-xs text-warning">
+                Shipping and taxes calculated at checkout.
+              </p>
+
+              <div className="flex items-center justify-center gap-5">
+                <Link
+                  to="/cart"
+                  className="btn btn-sm btn-primary  btn-outline"
+                >
+                  View All
+                </Link>
+
+                <Link to="/checkout" className="btn btn-sm  btn-primary ">
+                  Checkout
+                </Link>
               </div>
             </div>
           </div>
@@ -295,9 +282,7 @@ const PublicNavbar = ({ theme, user }) => {
           >
             <ul className="menu menu-lg rounded-box ">
               <h2 className="font-bold mt-2 pl-6">Notification</h2>
-              {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </button> */}
+
               <div className="divider m-0"></div>
               <li>
                 <Link href="/" className="justify-between">
@@ -331,7 +316,14 @@ const PublicNavbar = ({ theme, user }) => {
               </li>
 
               <div className="divider m-0"></div>
-              <button className="link link-primary link-hover">View all</button>
+              <div className="text-center">
+                <Link
+                  to="/notifications"
+                  className=" link link-primary link-hover"
+                >
+                  View all
+                </Link>
+              </div>
             </ul>
           </div>
         </div>
