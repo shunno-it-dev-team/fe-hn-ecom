@@ -125,7 +125,7 @@ const OrderHistory = () => {
 
           {/* ORDER TABLE */}
           <div className="mt-6 flow-root sm:mt-8">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full">
               <UtilTable columns={columns} data={data} border={false} />
             </div>
           </div>
