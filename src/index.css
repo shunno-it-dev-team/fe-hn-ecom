@@ -6,6 +6,7 @@
 
 * {
   scrollbar-color: initial;
+  box-sizing: border-box;
 }
 
 *:hover {
