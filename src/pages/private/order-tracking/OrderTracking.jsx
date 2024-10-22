@@ -91,9 +91,9 @@ const OrderTracking = () => {
       </div>
 
       {/*================ MAIN CONTENT ================ */}
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6 p-4">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
         {/* ================ PRODUCTS LIST TABLE ================*/}
-        <div className="lg:col-span-2  sm:p-6 rounded-lg border shadow-lg ">
+        <div className="lg:col-span-2  sm:p-6 rounded-lg border shadow-lg">
           <div className="overflow-y-auto max-h-60 ">
             <table className="table ">
               <thead className="sticky top-0 bg-primary ">
@@ -243,11 +243,11 @@ const OrderTracking = () => {
             </p>
           </div>
 
-          <div className="mt-6 space-x-2 flex items-center justify-center">
-            <button className="btn btn-sm btn-error  hover:btn-secondary transition-all w-40 ">
+          <div className="mt-6 flex items-center justify-center space-x-2">
+            <button className="btn btn-sm btn-error btn-outline flex-grow">
               Cancel the order
             </button>
-            <button className="btn btn-sm btn-info  hover:btn-success transition-all w-40">
+            <button className="btn btn-sm btn-primary flex-grow">
               Order details
             </button>
           </div>

@@ -13,6 +13,7 @@ const ProfilePage = () => {
         >
           <FaIconByKeyName iconName="FaBars" />
         </label>
+
         <CustomDrawer
           {...{
             drawerId: "profile-drawer",
