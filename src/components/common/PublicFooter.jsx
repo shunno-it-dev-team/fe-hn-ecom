@@ -27,7 +27,7 @@ const PublicFooter = () => {
           <label className="label">
             <span className="label-text">Enter your email address</span>
           </label>
-          <div className="join">
+          <div className="hidden lg:block join">
             <input
               type="text"
               placeholder="username@site.com"
@@ -36,6 +36,15 @@ const PublicFooter = () => {
             <button className="btn btn-sm btn-primary join-item">
               Subscribe
             </button>
+          </div>
+
+          <div className="lg:hidden  flex flex-col gap-2">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              className="input input-bordered input-sm"
+            />
+            <button className="btn btn-sm btn-primary">Subscribe</button>
           </div>
         </fieldset>
       </form>

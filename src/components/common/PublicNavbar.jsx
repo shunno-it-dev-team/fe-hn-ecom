@@ -10,7 +10,7 @@ import FaIconByKeyName from "../icons/FaIconByKeyName";
 
 const PublicNavbar = ({ theme, user }) => {
   return (
-    <div className="navbar bg-primary sticky text-base-100 top-0 z-30">
+    <div className="navbar justify-between bg-primary sticky text-base-100 top-0 z-30">
       {/* NAVBAR START */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -48,11 +48,14 @@ const PublicNavbar = ({ theme, user }) => {
       </div>
 
       {/* NAVBAR CENTER */}
-      <div className="navbar-center ">
-        <Link to="/" className="btn btn-ghost text-xl hover:bg-transparent">
+      <div className="navbar-center">
+        <Link
+          to="/"
+          className="btn btn-ghost px-0 text-xl hover:bg-transparent"
+        >
           <img
             src="/src/assets/logo/logo-520e4690.png"
-            alt=""
+            alt="logo"
             className="w-auto h-6"
           />
         </Link>
