@@ -23,8 +23,13 @@ const ProfileSidebar = () => {
     },
     {
       title: " My Order List",
-      icon: "FaBabyCarriage",
+      icon: "FaClipboardList",
       link: "/profile/order",
+    },
+    {
+      title: "Tracking Order ",
+      icon: "FaCartArrowDown",
+      link: "/profile/order-tracking",
     },
   ];
 

@@ -6,7 +6,7 @@ import FaIconByKeyName from "../../../components/icons/FaIconByKeyName";
 const ProfilePage = () => {
   return (
     <section className="min-h-screen">
-      <div className="max-w-screen-lg mx-auto flex items-start justify-between gap-5 flex-col lg:flex-row pt-10">
+      <div className="max-w-7xl mx-auto flex items-start justify-between gap-5 flex-col lg:flex-row pt-10">
         <label
           htmlFor="profile-drawer"
           className="btn btn-sm btn-ghost lg:hidden"

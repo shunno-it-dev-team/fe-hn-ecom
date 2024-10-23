@@ -69,10 +69,7 @@ export const router = createBrowserRouter([
         path: "/checkout",
         element: <CheckOutPage />,
       },
-      {
-        path: "/order-tracking",
-        element: <OrderTracking />,
-      },
+
       {
         path: "/profile",
         element: <ProfilePage />,
@@ -92,6 +89,10 @@ export const router = createBrowserRouter([
           {
             path: "address-book",
             element: <AddressBook />,
+          },
+          {
+            path: "order-tracking",
+            element: <OrderTracking />,
           },
         ],
       },
