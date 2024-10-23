@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { setThemeToRedux } from "../../redux/reducers/globalSlice";
 import PropTypes from "prop-types";
+import FaIconByKeyName from "../icons/FaIconByKeyName";
 
 const MobileTopBar = ({ theme, user }) => {
   return (
-    <div className="flex relative z-50 lg:hidden justify-center gap-2 items-center py-2 bg-secondary/40">
+    <div className="flex relative z-50 lg:hidden justify-end px-2 gap-2 items-center py-2 bg-secondary/40">
       <label className="input input-sm w-1/3 border-base-100/20 text-base-100 focus:outline-offset-0 focus:outline-1 focus-within:outline-offset-0 focus-within:outline-1 bg-base-100/20 flex items-center gap-2">
         <input
           type="text"
@@ -116,17 +117,16 @@ const MobileTopBar = ({ theme, user }) => {
             className="menu menu-sm dropdown-content rounded-box z-10 bg-primary mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a className="justify-between">
+              <Link to="/profile/personal-information">
+                <FaIconByKeyName iconName="FaUserCircle" />
                 Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-
-            <li>
-              <a>Settings</a>
+              </Link>
             </li>
             <li>
-              <a>Logout</a>
+              <Link to="/logout">
+                <FaIconByKeyName iconName="FaSignOutAlt" />
+                Logout
+              </Link>
             </li>
           </ul>
         </div>
