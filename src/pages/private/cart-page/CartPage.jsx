@@ -127,11 +127,7 @@ const CartPage = () => {
                         className="btn btn-sm"
                         onClick={() => removeItem(item.id)}
                       >
-                        <FaIconByKeyName
-                          iconName="FaTrashAlt"
-                          style={{ color: "red" }}
-                          size="2x"
-                        />
+                        <FaIconByKeyName iconName="FaTrashAlt" size="2x" />
                       </button>
                     </div>
                   </div>

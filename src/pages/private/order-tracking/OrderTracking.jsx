@@ -381,11 +381,11 @@ const OrderTracking = () => {
       {/*================ MAIN CONTENT ================ */}
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
         {/* ================ PRODUCTS LIST TABLE ================*/}
-        <div className="lg:col-span-2 sm:p-6 rounded-lg border shadow-lg">
+        <div className="lg:col-span-2 sm:p-6 rounded-lg border ">
           <div className="overflow-y-auto max-h-60 ">
             <table className="table">
-              <thead className="sticky top-0 bg-primary ">
-                <tr className="text-base-100">
+              <thead className="sticky top-0  bg-base-200">
+                <tr className="text-base-content">
                   <th>Product</th>
                   <th>Qty</th>
                   <th>Price</th>
@@ -412,7 +412,7 @@ const OrderTracking = () => {
         </div>
 
         {/*================ ORDER SUMMARY ================ */}
-        <div className="max-w-md mx-auto rounded-lg shadow-lg p-4">
+        <div className="max-w-md mx-auto rounded-lg border p-4">
           <h2 className="text-xl font-bold mb-4 text-primary">Order Details</h2>
 
           <div className="mb-2 flex items-center justify-between ">
