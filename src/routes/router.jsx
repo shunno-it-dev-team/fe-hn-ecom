@@ -91,7 +91,7 @@ export const router = createBrowserRouter([
             element: <AddressBook />,
           },
           {
-            path: "order-tracking",
+            path: "tracking",
             element: <OrderTracking />,
           },
         ],

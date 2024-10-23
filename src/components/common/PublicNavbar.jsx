@@ -344,7 +344,7 @@ const PublicNavbar = ({ theme, user }) => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content rounded-box z-10 bg-base-content  mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content rounded-box z-10 bg-primary  mt-3 w-52 p-2 shadow"
             >
               <li>
                 <Link to="/profile/personal-information">
