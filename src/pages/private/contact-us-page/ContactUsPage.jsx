@@ -27,7 +27,7 @@ const ContactUsPage = () => {
 
   return (
     <div className="flex min-h-screen max-w-screen-lg justify-between flex-col gap-5 lg:flex-row mx-auto items-center">
-      <div className="text-center lg:text-left relative z-10">
+      <div className="lg:text-left relative z-10  ">
         <h2 className="text-5xl font-bold mb-5 text-primary static">
           Contact Us
         </h2>
@@ -86,8 +86,6 @@ const ContactUsPage = () => {
       </div>
     </div>
   );
-}; 
-
-
+};
 
 export default ContactUsPage;

@@ -23,8 +23,13 @@ const ProfileSidebar = () => {
     },
     {
       title: " My Order List",
-      icon: "FaBabyCarriage",
+      icon: "FaClipboardList",
       link: "/profile/order",
+    },
+    {
+      title: "Tracking Order",
+      icon: "FaCartArrowDown",
+      link: "/profile/tracking",
     },
   ];
 
@@ -60,7 +65,7 @@ const ProfileSidebar = () => {
         <p className="text-sm">tasnia@email.com</p>
       </div>
 
-      <ul className="menu bg-base-200 rounded-box">
+      <ul className="menu bg-base-200 rounded-box gap-2">
         {profileMenu.map((item, index) => (
           <li key={index}>
             <Link

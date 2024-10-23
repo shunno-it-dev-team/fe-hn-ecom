@@ -2,12 +2,12 @@ const AboutPage = () => {
   return (
     <section className="bg-base-100 py-12">
       <div className="text-center mb-12">
-        <h3 className="text-3xl font-extrabold text-primary border-b-4 inline-block border-primary pb-2">
+        <h2 className="text-3xl font-extrabold text-primary border-b-4 inline-block border-primary pb-2">
           About Us
-        </h3>
+        </h2>
       </div>
       <div className="max-w-7xl mx-auto px-6 space-y-6">
-        <p className="text-lg text-justify leading-relaxed text-secondary">
+        <p className="text-lg text-justify leading-relaxed text-base-content">
           Eonbazar Quality Leader Online Shop in Bangladesh. Eonbazar Sister
           Concerns of Eon Group of Industries. Eon group is a fast-growing
           conglomerate in Agri-based industry working to provide inputs to
@@ -27,7 +27,7 @@ const AboutPage = () => {
 
         <div className="bg-base-200 p-6 rounded-lg shadow-sm">
           <h4 className="text-xl font-bold text-primary mb-4">Our Vision</h4>
-          <p className="text-lg text-justify leading-relaxed text-secondary">
+          <p className="text-lg text-justify leading-relaxed text-base-content">
             We are committed to being the Quality leader in Production, Process,
             and Distribution of safe products to the consumer.
           </p>
@@ -35,12 +35,12 @@ const AboutPage = () => {
 
         <div className="bg-base-200 p-6 rounded-lg shadow-sm">
           <h4 className="text-xl font-bold text-primary mb-4">Our Mission</h4>
-          <p className="text-lg text-justify leading-relaxed text-secondary mb-4">
+          <p className="text-lg text-justify leading-relaxed text-base-content mb-4">
             We are committed to contributing to the sustainable growth of the
             overall economy of the country by conducting all our business
             operations through:
           </p>
-          <ul className="list-disc pl-6 text-lg text-secondary">
+          <ul className="list-disc pl-6 text-lg text-base-content">
             <li>Innovation and introduction of proper products & services.</li>
             <li>Development of skilled human resources.</li>
             <li>
@@ -50,7 +50,7 @@ const AboutPage = () => {
           </ul>
         </div>
 
-        <p className="text-lg mt-4 text-secondary">
+        <p className="text-lg mt-4 text-base-content">
           We are further committed to training and motivating all our employees
           in order to provide superior quality service to every person we
           interact with.
@@ -60,7 +60,7 @@ const AboutPage = () => {
           <h4 className="text-xl font-bold text-primary mb-2">
             Our Business Areas:
           </h4>
-          <ul className="list-disc pl-6 text-lg text-secondary">
+          <ul className="list-disc pl-6 text-lg text-base-content">
             <li>
               Animal Agriculture (Dairy, Poultry & Aquaculture Integration)
             </li>
@@ -79,7 +79,7 @@ const AboutPage = () => {
 
         <div className="mt-6">
           <h4 className="text-xl font-bold text-primary mb-2">Eon Bazar</h4>
-          <p className="text-lg text-justify leading-relaxed text-secondary">
+          <p className="text-lg text-justify leading-relaxed text-base-content">
             Eon Bazar is an online marketplace of Eon Group committed to deliver
             a wide range of consumer food products to its consumers. All food
             products are antibiotic & chemical-free, freshly produced, and
@@ -88,13 +88,13 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <p className="mt-4 text-lg text-justify text-secondary">
+        <p className="mt-4 text-lg text-justify text-base-content">
           The production facility of different brands under this group of
           companies are Halal, ISO, and HACCP certified to ensure food safety
           and security to consumers.
         </p>
 
-        <p className="mt-4 text-lg text-justify text-secondary">
+        <p className="mt-4 text-lg text-justify text-base-content">
           Eon Bazar is currently offering reliable brands like Country Natural,
           Baqarah, Ocean Blue, Ocean Ria, and Puro.
         </p>

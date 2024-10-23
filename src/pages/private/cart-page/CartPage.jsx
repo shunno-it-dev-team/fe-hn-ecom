@@ -28,11 +28,22 @@ const CartPage = () => {
     0
   );
 
-  // ================ HANDLE QUANTITY CHANGE ================
-  const handleQuantityChange = (id, quantity) => {
+  // ================ HANDLE INCREMENT ================
+  const handleIncrement = (id) => {
     setCartItems(
       cartItems.map((item) =>
-        item.id === id ? { ...item, quantity: parseInt(quantity) } : item
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  // ================ HANDLE DECREMENT ================
+  const handleDecrement = (id) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
       )
     );
   };
@@ -69,25 +80,43 @@ const CartPage = () => {
                       />
                       <div>
                         <h4 className="font-bold text-sm text-primary mb-1">
-                          {/* {item.name} */}
                           {item.name.length > 30
                             ? item.name.slice(0, 30) + "..."
                             : item.name}
                         </h4>
-                        <div className=" items-center ">
+                        <div className="items-center">
                           <p className="text-sm text-base-content">
                             &#2547; {item.price} x {item.quantity}
                           </p>
-                          <form className="mt-1">
+
+                          <form className=" flex w-28">
+                            {/* Decrement Button */}
+                            <button
+                              type="button"
+                              id="decrement-button"
+                              className="btn btn-outline btn-xs"
+                              onClick={() => handleDecrement(item.id)}
+                            >
+                              <FaIconByKeyName iconName="FaMinus" />
+                            </button>
+
+                            {/* Quantity Input */}
                             <input
-                              type="number"
+                              type="text"
                               value={item.quantity}
-                              min="1"
-                              onChange={(e) =>
-                                handleQuantityChange(item.id, e.target.value)
-                              }
-                              className="input input-xs input-warning bg-base-100  w-16 "
+                              className="input input-bordered text-center input-xs h-6 w-full"
+                              readOnly
                             />
+
+                            {/* Increment Button */}
+                            <button
+                              type="button"
+                              id="increment-button"
+                              className="btn btn-outline btn-xs"
+                              onClick={() => handleIncrement(item.id)}
+                            >
+                              <FaIconByKeyName iconName="FaPlus" />
+                            </button>
                           </form>
                         </div>
                       </div>
@@ -111,7 +140,7 @@ const CartPage = () => {
             </div>
 
             {/* ================ CART SUMMARY ================ */}
-            <div className="lg:col-span-1  bg-base-100 p-4 border rounded-lg">
+            <div className="lg:col-span-1 bg-base-100 p-4 border rounded-lg">
               <h2 className="text-xl font-bold mb-2 text-primary">
                 Cart Summary
               </h2>
@@ -119,14 +148,11 @@ const CartPage = () => {
                 Subtotal: &#2547;{total.toFixed(2)}
               </p>
 
-              <div className=" flex mt-4 flex-col gap-4">
-                <Link
-                  to="/checkout"
-                  className="btn btn-sm  btn-primary  w-full"
-                >
+              <div className="flex mt-4 flex-col gap-4">
+                <Link to="/checkout" className="btn btn-sm btn-primary w-full">
                   Proceed to Checkout
                 </Link>
-                <Link to="/" className="btn btn-sm  btn-secondary w-full">
+                <Link to="/" className="btn btn-sm btn-secondary w-full">
                   Continue Shopping
                 </Link>
               </div>
