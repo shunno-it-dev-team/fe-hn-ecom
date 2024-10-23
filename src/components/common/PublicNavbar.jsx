@@ -7,6 +7,7 @@ import AuthWrapper from "../../pages/public/auth/AuthWrapper";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import FaIconByKeyName from "../icons/FaIconByKeyName";
+import CustomDropdown from "./CustomDropdown";
 
 const PublicNavbar = ({ theme, user }) => {
   return (
@@ -118,7 +119,7 @@ const PublicNavbar = ({ theme, user }) => {
         </label>
 
         {/* CART */}
-        <div className="dropdown dropdown-end">
+        {/* <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
             role="button"
@@ -251,8 +252,73 @@ const PublicNavbar = ({ theme, user }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
+        <CustomDropdown
+          {...{
+            title: (
+              <div className="indicator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span className="badge badge-sm indicator-item">8</span>
+              </div>
+            ),
+            className: "btn btn-sm btn-ghost btn-circle",
+            menuPortalClassName: "w-96 text-base-content",
+            menuHeaderTitle: "Shopping cart",
+            placement: "end",
+            hasHeader: true,
+            menuItems: [
+              {
+                title: (
+                  <>
+                    <div className="flex gap-3 flex-grow">
+                      <figure className="h-14 w-14 rounded-none mask mask-squircle">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                          alt="Cart Image"
+                        />
+                      </figure>
+
+                      <div>
+                        <p className="font-bold text-sm text-primary">
+                          Throwback Hip Bag
+                        </p>
+                        <p className="text-sm "> &#2547; 90</p>
+                        <p className="text-xs ">Qty 1</p>
+                      </div>
+                    </div>
+
+                    <button className="btn btn-sm btn-circle">
+                      <FaIconByKeyName iconName="FaTrash" />
+                    </button>
+                  </>
+                ),
+                className: "flex justify-between gap-4",
+              },
+            ],
+            hasFooter: true,
+            FooterComponent: (
+              <div className="flex items-center justify-center gap-2">
+                <Link to="/cart" className="btn btn-sm btn-primary btn-link">
+                  View All
+                </Link>
+              </div>
+            ),
+          }}
+        />
         {/* NOTIFICATION */}
         <div className="dropdown dropdown-end">
           <div
