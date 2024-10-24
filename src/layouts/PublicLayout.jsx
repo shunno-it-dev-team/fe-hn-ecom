@@ -13,7 +13,7 @@ const PublicLayout = () => {
       <MobileTopBar {...{ theme, user }} />
       <PublicNavbar {...{ theme, user }} />
 
-      <main className="bg-base-200 pb-10">
+      <main className="bg-base-200 pb-10 px-3 lg:px-0">
         <Outlet />
       </main>
 

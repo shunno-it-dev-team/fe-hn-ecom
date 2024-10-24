@@ -54,7 +54,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto mb-10 p-4  bg-base-100 ">
+    <div className="max-w-screen-xl mx-auto mb-10 p-4 ">
       <div className="max-w-screen-xl mx-auto">
         <h1 className="text-3xl font-bold mb-4 text-primary">Shopping Cart</h1>
 
@@ -65,7 +65,7 @@ const CartPage = () => {
         ) : (
           <div className="grid gap-4 grid-cols-1 lg:grid-cols-5 justify-between ">
             {/* ================ CART ITEMS ================ */}
-            <div className="lg:col-span-4 space-y-2 p-4 rounded-lg border">
+            <div className="lg:col-span-4 space-y-2 p-4 rounded-lg border bg-base-100 ">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
@@ -89,12 +89,12 @@ const CartPage = () => {
                             &#2547; {item.price} x {item.quantity}
                           </p>
 
-                          <form className=" flex w-28">
+                          <form className="join">
                             {/* Decrement Button */}
                             <button
                               type="button"
                               id="decrement-button"
-                              className="btn btn-outline btn-xs"
+                              className="btn btn-secondary btn-outline btn-xs join-item"
                               onClick={() => handleDecrement(item.id)}
                             >
                               <FaIconByKeyName iconName="FaMinus" />
@@ -104,7 +104,7 @@ const CartPage = () => {
                             <input
                               type="text"
                               value={item.quantity}
-                              className="input input-bordered text-center input-xs h-6 w-full"
+                              className="join-item input input-bordered border-secondary text-center input-xs w-12"
                               readOnly
                             />
 
@@ -112,7 +112,7 @@ const CartPage = () => {
                             <button
                               type="button"
                               id="increment-button"
-                              className="btn btn-outline btn-xs"
+                              className="btn btn-secondary btn-outline btn-xs join-item"
                               onClick={() => handleIncrement(item.id)}
                             >
                               <FaIconByKeyName iconName="FaPlus" />
@@ -124,7 +124,7 @@ const CartPage = () => {
 
                     <div>
                       <button
-                        className="btn btn-sm"
+                        className="btn btn-sm btn-circle text-error"
                         onClick={() => removeItem(item.id)}
                       >
                         <FaIconByKeyName iconName="FaTrashAlt" size="2x" />

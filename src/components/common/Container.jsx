@@ -4,7 +4,7 @@ const Container = ({ children, className, fluid, Component = "div" }) => {
   return (
     <Component
       className={`mx-auto ${
-        fluid ? "px-5" : "container px-2 lg:px-0"
+        fluid ? "px-5" : "max-w-screen-xl px-2 lg:px-0"
       } ${className}`}
     >
       {children}
